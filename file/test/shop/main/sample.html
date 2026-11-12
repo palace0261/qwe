@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SODA MEDIA SHOP</title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+  <div>
+    <form action="#"></form>
+    PTZ 카메라, 컨트롤러, 스위처 등 다양한 영상장비를 제공합니다.
+    <input type="text" value="199">
+    <div>
+      <input type="checkbox" id="checkbox1" name="checkbox1" value="PTZ 카메라">
+      <label for="checkbox1">CUBE10S</label>
+    </div>
+    
+    <div>
+      <input type="checkbox" id="checkbox2" name="checkbox2" value="PTZ 스위처">
+      <label for="checkbox2">LivePro L1</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="checkbox3" name="checkbox3" value="PTZ 스위처">
+      <label for="checkbox3">CUBE20S</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="checkbox4" name="checkbox4" value="PTZ 스위처">
+      <label for="checkbox4">UHD20</label>
+    </div>
+
+    <input type="submit" value="장바구니에 담기" onclick="updateCart()">    
+  </div>
+
+  <div>
+    <h4>장바구니</h4>
+    <input type="text" id="cartItem1" value="장바구니에 담긴 상품이 없습니다."
+    style="width: 50%;" readonly >
+    <input type="text" id="cartItem2" value="상품을 담아주세요." readonly>
+  </div>
+
+
+<script>
+  function handleCheckbox1And3(e) {
+    if (checkbox1.checked && checkbox3.checked) {
+      alert('Full 제품과 4K동시에 선택할 수 없습니다.');
+      if (e.target === checkbox3) {
+        checkbox3.checked = false;
+      } else {
+        checkbox1.checked = false;
+      }
+    }
+  }
+  checkbox1.addEventListener('change', handleCheckbox1And3);
+  checkbox3.addEventListener('change', handleCheckbox1And3);
+</script>
+
+  <script>
+    const checkbox1 = document.getElementById('checkbox1');
+    const checkbox2 = document.getElementById('checkbox2');
+    const checkbox3 = document.getElementById('checkbox3');
+    const checkbox4 = document.getElementById('checkbox4');
+    const cartItem1 = document.getElementById('cartItem1');
+    const cartItem2 = document.getElementById('cartItem2');
+
+    function updateCart() {
+      const items = [];
+      if (checkbox1.checked) items.push('CUBE10S');
+      if (checkbox2.checked) items.push('PTZ 스위처');
+      if (checkbox3.checked) items.push('PTZ 카메라');
+      if (checkbox4.checked) items.push('PTZ 스위처');
+
+      if (items.length > 0) {
+        cartItem1.value = items.join(', ');
+        cartItem2.value = `수량: ${items.length}`;
+      } else {
+        cartItem1.value = '장바구니에 담긴 상품이 없습니다.';
+        cartItem2.value = '상품을 담아주세요.';
+      }
+    }
+
+    checkbox1.addEventListener('change', updateCart);
+    checkbox2.addEventListener('change', updateCart);
+    checkbox3.addEventListener('change', updateCart);
+    checkbox4.addEventListener('change', updateCart);
+  </script>
+
+</body>
+</html>

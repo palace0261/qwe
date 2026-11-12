@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  li{
+    color: #fff;
+    text-align: center;
+    width: 100%;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+    section > div:nth-of-type(2) > ul li p{
+      padding-top: 1rem;
+    }
+  section > div:nth-of-type(2) > ul{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+  }
+  section > div:nth-of-type(2) > ul:nth-of-type(2) > li,
+  section > div:nth-of-type(2) > ul:nth-of-type(3) > li{
+    padding-top: 1rem;
+    height: 38%;
+  }
+  section > div:nth-of-type(2) > ul:nth-of-type(2) > li:nth-of-type(6){
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+  section > div:nth-of-type(2) > ul:nth-of-type(3) > li:nth-of-type(5){
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  section > div:nth-of-type(2) > ul:nth-of-type(2) > li:nth-of-type(-n+3){
+    color: #00000000;
+  }
+  section > div:nth-of-type(2) > ul:nth-of-type(2) > li:nth-of-type(n+6),
+  section > div:nth-of-type(2) > ul:nth-of-type(3) > li:nth-of-type(-n+5){
+    color: #ff2525;
+    background-color: #fff0c9;
+  }
+</style>
+<body>
+
+  <div style="padding: 1rem; margin: 0rem; max-width: 600px;">
+  <section style="background-color: #7cad8d; max-width: 600px;">
+  <div>
+    <img src="123g.jpg" width="100%;">
+  </div>
+  <div style="display: flex; gap: 1rem;flex-wrap: wrap;flex-direction: column; padding: 0rem 0 2rem">
+
+    <ul>
+      <li>일</li>
+      <li>월</li>
+      <li>화</li>
+      <li>수</li>
+      <li>목</li>
+      <li>금</li>
+      <li>토</li>
+    </ul>
+
+    <ul>
+      <li>0</li>
+      <li>0</li>
+      <li>0</li>
+      <li>1</li>
+      <li style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+"><span style="
+    /* padding: 7rem; */
+    /* margin: 6rem; */
+    width: 58%;
+    display: flex;
+    text-align: center;
+    background: #ff9090;
+    border-radius: 18rem;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0rem;
+">2
+</span>
+        <p>발송마감</p>
+      </li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+
+    <ul>
+      <li>5</li>
+      <li style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+"><span style="
+    /* padding: 7rem; */
+    /* margin: 6rem; */
+    width: 58%;
+    display: flex;
+    text-align: center;
+    background: #ff909000;
+    border-radius: 18rem;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0rem;
+">6
+</span>
+        <p style="color: #fff;">추석연휴</p>
+      </li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+"><span style="
+    /* padding: 7rem; */
+    /* margin: 6rem; */
+    width: 58%;
+    display: flex;
+    text-align: center;
+    background: #ff9090;
+    border-radius: 18rem;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0rem;
+">10
+</span>
+        <p>순차출고</p>
+      </li>
+      <li>11</li>
+    </ul>
+
+  </div>
+  <div style="text-align: center; padding-bottom: 2rem;">
+    <span style="color: #f7f7f7;">즐거운 추석 연휴 보내세요.</span>
+  </div>
+  </section>
+  <div>
+
+
+</body>
+</html>

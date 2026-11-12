@@ -1,0 +1,11 @@
+
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="radio"] ~ div{
+    display: none;
+  }
+  input[type="radio"]:checked + div {
+    display: flex;
+    flex-direction: column;
+  }

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cm px</title>
+</head>
+<body>
+
+  <section>
+    <h5>ex</h5>
+    <ul>
+      <li>27 : 60ㅣ34</li>
+      <li>18.5 : 42.3ㅣ25.8</li>
+      <li>16 : 35.5ㅣ25</li>
+    </ul>
+  </section>
+
+    <section>
+      <div>
+
+        <h5> ㅡ 가로 (cm)</h5>
+        <input type="number" step="0.1" name="" id="">
+        
+        <h5> ㅣ 세로 (cm)</h5>
+        <input type="number" step="0.1" name="" id="">
+
+        <button id="saveBtn">Save</button>
+
+        <div id="savedBoxes" style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;"></div>
+
+        <script>
+          const inputs = document.querySelectorAll('input');
+          const container = document.querySelector('div');
+          const saveBtn = document.getElementById('saveBtn');
+          const savedBoxesContainer = document.getElementById('savedBoxes');
+
+          // Convert cm to pixels (96 DPI standard: 1cm = 37.795275591 pixels)
+          const CM_TO_PX = 37.795275591;
+
+          inputs.forEach(input => {
+            input.addEventListener('input', createBox);
+          });
+
+          saveBtn.addEventListener('click', saveBox);
+
+          function createBox() {
+            const widthCm = inputs[0].value;
+            const heightCm = inputs[1].value;
+            
+            // Remove existing box if any
+            const existingBox = document.getElementById('previewBox');
+            if (existingBox) {
+              existingBox.remove();
+            }
+            
+            if (widthCm && heightCm) {
+              const widthPx = widthCm * CM_TO_PX;
+              const heightPx = heightCm * CM_TO_PX;
+              
+              const box = document.createElement('div');
+              box.id = 'previewBox';
+              box.style.width = widthPx + 'px';
+              box.style.height = heightPx + 'px';
+              box.style.border = '2px solid #333';
+              box.style.marginTop = '20px';
+              box.style.backgroundColor = '#f0f0f0';
+              container.appendChild(box);
+            }
+          }
+
+          function saveBox() {
+            const widthCm = inputs[0].value;
+            const heightCm = inputs[1].value;
+
+            if (widthCm && heightCm) {
+              const widthPx = widthCm * CM_TO_PX;
+              const heightPx = heightCm * CM_TO_PX;
+              
+              const savedBox = document.createElement('div');
+              savedBox.style.width = widthPx + 'px';
+              savedBox.style.height = heightPx + 'px';
+              savedBox.style.border = '2px solid #333';
+              savedBox.style.backgroundColor = '#d0d0d0';
+              savedBox.style.flexShrink = '0';
+              savedBox.textContent = `${widthCm}cm × ${heightCm}cm`;
+              savedBox.style.display = 'flex';
+              savedBox.style.alignItems = 'center';
+              savedBox.style.justifyContent = 'center';
+              savedBox.style.fontSize = '12px';
+              
+              savedBoxesContainer.appendChild(savedBox);
+            }
+          }
+        </script>
+
+
+      </div>
+
+
+  </section>
+</body>
+</html>

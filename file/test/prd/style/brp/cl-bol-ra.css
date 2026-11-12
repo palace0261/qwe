@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#container{
+  width: 3547px;
+  height: 5017px;
+  background-color: #f1f1f1;
+  display: flex;
+  align-content: stretch;
+  align-items: center;
+}
+
+
+.f01{
+  background: #111;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>wsl 캡처 도구</title>
+  <style>
+    body { font-family: 'Malgun Gothic', sans-serif; padding: 24px; }
+    button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    #status { margin: 12px 0; white-space: pre-wrap; }
+    #result img { max-width: 100%; border: 1px solid #ccc; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <h2>wsl/main.html 캡처</h2>
+  <button id="captureBtn">캡쳐생성 하기</button>
+  <div id="status"></div>
+  <div id="result"></div>
+
+  <script>
+    const btn = document.getElementById('captureBtn');
+    const statusEl = document.getElementById('status');
+    const resultEl = document.getElementById('result');
+
+    btn.addEventListener('click', async () => {
+      btn.disabled = true;
+      statusEl.textContent = '캡처 생성 중...';
+      resultEl.innerHTML = '';
+
+      try {
+        const res = await fetch('capture.php', { method: 'POST' });
+        const data = await res.json();
+
+        if (data.success) {
+          statusEl.textContent = '완료!';
+          const img = document.createElement('img');
+          img.src = '../../output.png?t=' + Date.now();
+          resultEl.appendChild(img);
+        } else {
+          statusEl.textContent = '실패: ' + data.message;
+        }
+      } catch (err) {
+        statusEl.textContent = '요청 오류: ' + err.message;
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

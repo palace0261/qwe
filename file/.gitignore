@@ -1,0 +1,10 @@
+# Composer
+/vendor/
+
+# Env (secrets)
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

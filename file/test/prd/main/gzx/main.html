@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>휴무 달력</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f5f5f5;
+    }
+    
+    .calendar-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .calendar-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    .week-container {
+      margin-bottom: 30px;
+    }
+    
+    .week-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #555;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 5px;
+    }
+    
+    .calendar-week {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .day-header {
+      background-color: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 10px 5px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    
+    .day {
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      padding: 15px 5px;
+      text-align: center;
+      min-height: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .day-number {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .day-info {
+      font-size: 12px;
+      line-height: 1.2;
+    }
+    
+    .sunday {
+      color: #e74c3c;
+    }
+    
+    .saturday {
+      color: #3498db;
+    }
+    
+    .holiday {
+      background-color: #ffe6e6 !important;
+      color: #e74c3c !important;
+    }
+    
+    .holiday .day-number {
+      color: #e74c3c;
+    }
+    
+    .holiday .day-info {
+      color: #c0392b;
+      font-weight: bold;
+    }
+    
+    .vacation {
+      background-color: #fff3cd !important;
+      color: #856404 !important;
+    }
+    
+    .vacation .day-number {
+      color: #856404;
+    }
+    
+    .vacation .day-info {
+      color: #856404;
+      font-weight: bold;
+    }
+    
+    .other-month {
+      background-color: #f8f9fa;
+      color: #6c757d;
+    }
+    
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+    
+    .legend-holiday {
+      background-color: #ffe6e6;
+    }
+    
+    .legend-vacation {
+      background-color: #fff3cd;
+    }
+  </style>
+</head>
+<body>
+  <div class="calendar-container">
+    <div class="calendar-title">소다미디어 연말 휴무 안내</div>
+      <p style="text-align: center;">2025년 12월 26일과 2026년 1월 2일은 휴무입니다.</p>
+    
+    <!-- 12월 4주차 (12월 22일 ~ 12월 28일) -->
+    <div class="week-container">
+      <div class="calendar-week">
+        <div class="day-header">일</div>
+        <div class="day-header">월</div>
+        <div class="day-header">화</div>
+        <div class="day-header">수</div>
+        <div class="day-header">목</div>
+        <div class="day-header">금</div>
+        <div class="day-header">토</div>
+        
+        <div class="day other-month">
+          <div class="day-number">21</div>
+          <div class="day-info">일요일</div>
+        </div>
+        <div class="day">
+          <div class="day-number">22</div>
+          <div class="day-info">월요일</div>
+        </div>
+        <div class="day">
+          <div class="day-number">23</div>
+          <div class="day-info">화요일</div>
+        </div>
+        <div class="day">
+          <div class="day-number">24</div>
+          <div class="day-info">수요일</div>
+        </div>
+        <div class="day holiday">
+          <div class="day-number">25</div>
+          <div class="day-info">크리스마스<br>공휴일</div>
+        </div>
+        <div class="day vacation">
+          <div class="day-number">26</div>
+          <div class="day-info">금요일<br>휴무</div>
+        </div>
+        <div class="day saturday">
+          <div class="day-number">27</div>
+          <div class="day-info">토요일</div>
+        </div>
+        
+        <div class="day sunday">
+          <div class="day-number">28</div>
+          <div class="day-info">2025년 12월<br>일요일</div>
+        </div>
+        <div class="day">
+          <div class="day-number">29</div>
+          <div class="day-info">2025년 12월<br>월요일</div>
+        </div>
+        <div class="day">
+          <div class="day-number">30</div>
+          <div class="day-info">2025년 12월<br>화요일</div>
+        </div>
+        <div class="day">
+          <div class="day-number">31</div>
+          <div class="day-info">2025년 12월<br>수요일</div>
+        </div>
+        <div class="day holiday">
+          <div class="day-number">1</div>
+          <div class="day-info">2026년 1월<br>신정<br>공휴일</div>
+        </div>
+        <div class="day vacation">
+          <div class="day-number">2</div>
+          <div class="day-info">2026년 1월<br>금요일<br>휴무</div>
+        </div>
+        <div class="day saturday">
+          <div class="day-number">3</div>
+          <div class="day-info">2026년 1월<br>토요일</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 범례 -->
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color legend-holiday"></div>
+        <span>공휴일 (크리스마스, 신정)</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color legend-vacation"></div>
+        <span>휴무일</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

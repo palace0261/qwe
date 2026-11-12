@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주차권 관리</title>
+  <!-- Bootstrap CSS for styling -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding: 20px; font-family: 'Noto Sans KR', sans-serif; }
+    h2, h4 { margin-top: 30px; margin-bottom: 15px; font-weight: bold; }
+    .table-responsive { margin-bottom: 20px; }
+    th { background-color: #f8f9fa !important; text-align: center; }
+    td { text-align: center; vertical-align: middle; }
+    .header-emoji { font-size: 1.5rem; margin-right: 10px; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2><span class="header-emoji">🅿️</span>월간 주차권 사용 확인 <span class="header-emoji">🚘</span></h2>
+
+    <!-- Table 1: Recharge List -->
+    <h4>12월 29일 주차권 충전 리스트</h4>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>종류</th>
+            <th>개당가격</th>
+            <th>수량</th>
+            <th>합계</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>30분</td>
+            <td>500</td>
+            <td>36</td>
+            <td>18,000</td>
+          </tr>
+          <tr>
+            <td>1시간</td>
+            <td>1,000</td>
+            <td>60</td>
+            <td>60,000</td>
+          </tr>
+          <tr>
+            <td>5시간</td>
+            <td>5,000</td>
+            <td>28</td>
+            <td>140,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Table 2: Usage Summary -->
+    <h4>12월 29일 ~ 1월 19일 주차권 사용 리스트 요약</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>구분</th>
+              <th>추민식</th>
+              <th>나경훈</th>
+              <th>합계</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>30분 유료</td>
+              <td>29</td>
+              <td>11</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td>1시간 무료</td>
+              <td>14</td>
+              <td>14</td>
+              <td>28</td>
+            </tr>
+            <tr>
+              <td>1시간 유료</td>
+              <td>24</td>
+              <td>36</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <td>5시간 유료</td>
+              <td>14</td>
+              <td>12</td>
+              <td>26</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Table 3: Remaining Stock -->
+      <div class="col-md-6">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>구분</th>
+              <th>전월</th>
+              <th>사용</th>
+              <th>잔량</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>30분 유료</td>
+              <td>4</td>
+              <td>40</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>1시간 유료</td>
+              <td>0</td>
+              <td>60</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>5시간 유료</td>
+              <td>2</td>
+              <td>26</td>
+              <td>4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+      <!-- Table 4: Daily Log -->
+      <h4>상세 사용 내역</h4>
+      <div class="table-responsive">
+        <table class="table table-sm table-bordered align-middle text-center">
+        <thead>
+          <tr class="table-light">
+          <th>날짜</th>
+          <th>이름</th>
+          <th>1시간 무료</th>
+          <th>1시간 유료</th>
+          <th>30분 유료</th>
+          <th>5시간 유료</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 12월 29일 -->
+          <tr>
+            <td rowspan="2">12월 29일</td>
+            <td>나경훈</td>
+            <td>1</td>
+            <td>3</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>추민식</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+
+          <!-- 12월 30일 -->
+          <tr>
+            <td rowspan="2">12월 30일</td>
+            <td>나경훈</td>
+            <td>1</td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>추민식</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+
+          <!-- 12월 31일 -->
+          <tr>
+            <td rowspan="2">12월 31일</td>
+            <td>추민식</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>나경훈</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+
+          <!-- 1월 5일 -->
+          <tr>
+            <td rowspan="2">1월 5일</td>
+            <td>추민식</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>나경훈</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+
+          <!-- 1월 6일 -->
+          <tr>
+            <td rowspan="2">1월 6일</td>
+            <td>추민식</td>
+            <td>1</td>
+            <td>1</td>
+            <td>3</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>나경훈</td>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+
+          <!-- 1월 7일 -->
+          <tr>
+            <td rowspan="2">1월 7일</td>
+            <td>나경훈</td>
+            <td>1</td>
+            <td>3</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>추민식</td>
+            <td>1</td>
+            <td>1</td>
+            <td>4</td>
+            <td>1</td>
+          </tr>
+
+          <!-- 1월 8일 -->
+          <tr>
+            <td rowspan="2">1월 8일</td>
+            <td>추민식</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>나경훈</td>
+            <td>1</td>
+            <td>3</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+
+          <!-- 1월 9일 -->
+          <tr>
+            <td rowspan="2">1월 9일</td>
+            <td>나경훈</td>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>추민식</td>
+            <td>1</td>
+            <td>3</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+
+          <!-- 1월 12일 -->
+          <tr>
+            <td rowspan="2">1월 12일</td>
+            <td>추민식</td>
+            <td>1</td>
+            <td>1</td>
+            <td>3</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>나경훈</td>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+
+          <!-- 1월 13일 -->
+          <tr>
+            <td rowspan="2">1월 13일</td>
+            <td>추민식</td>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>나경훈</td>
+            <td>1</td>
+            <td>4</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+
+          <!-- 1월 14일 -->
+          <tr>
+            <td rowspan="2">1월 14일</td>
+            <td>나경훈</td>
+            <td>1</td>
+            <td>4</td>
+            <td>1</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>추민식</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+
+          <!-- 1월 15일 -->
+          <tr>
+            <td rowspan="2">1월 15일</td>
+            <td>나경훈</td>
+            <td>1</td>
+            <td>3</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>추민식</td>
+            <td>1</td>
+            <td>3</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+
+          <!-- 1월 16일 -->
+          <tr>
+            <td rowspan="2">1월 16일</td>
+            <td>추민식</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>나경훈</td>
+            <td>1</td>
+            <td>3</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+
+          <!-- 1월 19일 -->
+          <tr>
+            <td rowspan="2">1월 19일</td>
+            <td>나경훈</td>
+            <td>1</td>
+            <td>1</td>
+            <td>3</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>추민식</td>
+            <td>1</td>
+            <td>0</td>
+            <td>5</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+      </div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

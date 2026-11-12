@@ -1,0 +1,19 @@
+{
+    "SaleOrderList": [
+        {
+            "BulkDatas": {
+                "UPLOAD_SER_NO": "1",
+                "CUST": "test",
+                "WH_CD": "100",
+                "PROD_CD": "test",
+                "QTY": "1",
+                "IO_DATE": "20260330",
+                "PROD_DES": "123",
+                "PRICE": "0",
+                "SUPPLY_AMT": "0",
+                "VAT_AMT": "0",
+                "EMP_CD": "99"
+            }
+        }
+    ]
+}

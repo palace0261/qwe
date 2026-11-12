@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#container{
+  width: 3117px; 
+  height: 4420px; 
+  background-color: #f1f1f1;
+}
+
+.s01{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  max-width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.ss01 h2{
+  font-size: 12rem;
+  font-weight: 900;
+}
+.ss01 h3{
+  font-size: 12rem;
+  font-weight: 400;
+}
+
+.ss04{
+  border-left: 3rem solid #ff2929;
+  padding: 0rem 0rem 0rem 10rem;
+}
+.ss04 h3{
+  font-size: 14rem;
+  /* font-weight: 400; */
+}
+
+.ss01{
+  background:#111;
+  color:#fff;
+  padding: 12rem 19rem 7rem;
+  text-align: center;
+}
+.ss02{
+  /* background:#ccc; */
+  /* position: relative; */
+  /* height: 104rem; */
+}
+.ss02 img{
+  position:relative;
+  top: 12rem;
+  background: #ccc;
+  padding: 21rem 0 2rem;
+}
+.ss03{
+  font-size: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* display: flex; */
+  gap: 1rem;
+  flex-direction: column;
+  background: #111;
+  color: #fff;
+  padding-bottom: 8rem;
+}
+.ss03  > span{
+  padding:5rem;
+}
+.ss03  > span > h5{
+  font-size:4rem;
+  padding-bottom:1rem;
+}
+.ss03  > span > span{
+  font-size: 2.5rem;
+}
+.ss03 > span:nth-of-type(4){
+  grid-column:2;
+  padding: 3rem 0rem 0;
+}
+.ss03 img{
+  display: flex;
+  width: 52%;
+  margin: 0 auto;
+}

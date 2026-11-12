@@ -1,0 +1,16 @@
+body { font-family: Arial, sans-serif; margin: 16px; }
+table { border-collapse: separate; border-spacing: 0 10px; width:100%; }
+th { background: #f3f3f3; }
+input[type="text"], input[type="number"] { width: 140px; }
+.msg { margin: 8px 0; padding: 8px; background: #eef7ff; border: 1px solid #cfe8ff; }
+.err { margin: 8px 0; padding: 8px; background: #fff0f0; border: 1px solid #ffd0d0; color: #900; }
+.section { margin: 20px 0; }
+.row-actions { display: flex; gap: 6px; align-items: center; }
+tbody.order-group.group-0 tr td { background: #fbfdff; }
+tbody.order-group.group-1 tr td { background: #f7fff7; }
+tbody.order-group.group-2 tr td { background: #fff7f7; }
+tbody.order-group.group-3 tr td { background: #fffdfa; }
+tbody.order-group.group-4 tr td { background: #f7f7ff; }
+tbody.order-group.group-5 tr td { background: #f7fffb; }
+tbody.order-group tr td { border: 1px solid #e0e0e0; }
+tbody.order-group tr td input { background: transparent; border: none; width:100%; box-sizing:border-box; }

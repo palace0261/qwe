@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  body{
+    margin: 0;
+  }
+  body > section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  body > section > div{
+    width: 100%;
+    display: flex;
+  }
+  body > section > div > ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  input{
+    width: 30%;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    text-align: center;
+  }
+</style>
+<body>
+ 
+<section>
+  <div>
+    <ul>
+      <h4>랜덤 숫자 생성기</h4>
+      <li style="text-align: center;">
+        <input type="text" id="ft" value="">
+        ~
+        <input type="text" id="lt" value="">
+      </li>
+      <li>
+          <button id="rndBtn" type="button">생성</button>
+          <span id="rndResult" aria-live="polite"></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+
+<script>
+(function(){
+  const btn = document.getElementById('rndBtn');
+  const result = document.getElementById('rndResult');
+  const ft = document.getElementById('ft');
+  const lt = document.getElementById('lt');
+
+  btn.addEventListener('click', () => {
+    const a = ft.value.trim();
+    const b = lt.value.trim();
+    const n1 = Number(a);
+    const n2 = Number(b);
+    if (a === '' || b === '' || !Number.isFinite(n1) || !Number.isFinite(n2)) {
+      result.textContent = '유효한 숫자를 입력하세요.';
+      return;
+    }
+
+    const min = Math.min(n1, n2);
+    const max = Math.max(n1, n2);
+
+    // Determine integer inclusive bounds
+    const minInt = Math.ceil(min);
+    const maxInt = Math.floor(max);
+    if (minInt > maxInt) {
+      result.textContent = '유효한 정수 범위를 입력하세요.';
+      return;
+    }
+
+    // Disable inputs while "loading"
+    btn.disabled = true;
+    ft.disabled = true;
+    lt.disabled = true;
+
+    // Loading text with animated dots
+    const baseText = '로딩입니다';
+    let dots = 0;
+    result.textContent = baseText;
+    const dotInterval = setInterval(() => {
+      dots = (dots + 1) % 4; // 0..3
+      result.textContent = baseText + '.'.repeat(dots);
+    }, 350);
+
+    const loadingDuration = 1200; // ms
+    setTimeout(() => {
+      clearInterval(dotInterval);
+
+      // Generate random integer between minInt and maxInt inclusive
+      const rangeCount = maxInt - minInt + 1;
+      const rand = Math.floor(Math.random() * rangeCount) + minInt;
+
+      // Compute probability percentage for this discrete uniform selection
+      const percent = (100 / rangeCount);
+      const pctStr = Number.isFinite(percent) ? percent.toFixed(2) : '0.00';
+
+      const str = String(rand) + ' (' + pctStr + '%)';
+
+      // Reveal characters one by one
+      result.textContent = '';
+      const perCharDelay = 120; // ms per character
+      for (let i = 0; i < str.length; i++) {
+        setTimeout(((ch) => {
+          return () => { result.textContent += ch; };
+        })(str[i]), perCharDelay * i);
+      }
+
+      // Re-enable inputs after animation finishes
+      setTimeout(() => {
+        btn.disabled = false;
+        ft.disabled = false;
+        lt.disabled = false;
+      }, perCharDelay * str.length + 80);
+
+    }, loadingDuration);
+  });
+})();
+</script>
+
+
+</body>
+</html>

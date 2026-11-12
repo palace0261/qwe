@@ -1,0 +1,2169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- head -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="티엔렌 - 쉐딩형 Card Game">
+  <meta name="keywords" content="티엔렌, Tiến Lên, Card Game, 쉐딩형">
+  <meta name="author" content="티엔렌">
+  <meta name="robots" content="index,follow">
+
+  <meta property="og:title" content="티엔렌 - 쉐딩형 Card Game">
+  <meta property="og:description" content="티엔렌 - 쉐딩형 Card Game">
+  <meta property="og:image" content="/">
+  <meta property="og:url" content="/">
+  <meta property="og:type" content="website"> 
+  <meta property="og:site_name" content="티엔렌 - 쉐딩형 Card Game">
+
+  <link rel="canonical" href="/">
+  <link rel="icon" href="/" type="image/x-icon">
+
+  <title>Tiến Lên - 북부식 카드게임</title>
+
+  <!-- custum -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- icon -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/font.css">
+  <link rel="stylesheet" href="../css/base.css">
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR','Apple SD Gothic Neo','Malgun gothic','Helvetica','Dotum',sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f4c75, #3282b8);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .game-header {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+        }
+
+        .game-header > h1{
+          font-size: calc(1.5rem + 1vw);
+        }
+
+        .zqco {display: grid;/* grid-template-columns: 1fr 1fr; */align-items: end;justify-items: center;gap: 2rem;}
+        
+        .rules-toggle {
+            background: #3282b8;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        
+        .rules-toggle > div{
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
+        }
+
+        .rules-toggle > div span{
+          font-size: 1.25rem;
+        }
+
+
+        
+        .rules-panel {
+            background: rgba(0,0,0,0.8);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem;
+            display: none;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .rules-panel.show {
+            display: block;
+        }
+        
+        .game-start-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+        }
+        
+        
+        .start-game-btn {
+            font-size: 1.3rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .start-game-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+        }
+        
+        .countdown-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .countdown-content {
+            text-align: center;
+        }
+        
+        #countdownText {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: pulse 1s ease-in-out;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .game-board {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+        }
+        
+        .opponents {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .player {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            min-width: 120px;
+        }
+        
+        .player.active {
+            background: rgba(255,255,0,0.3);
+            border: 2px solid #ffd700;
+        }
+        
+        .center-area {
+            background: rgba(0,0,0,0.5);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 2px dashed #666;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            max-width: 600px;
+            min-height: 300px;
+        }
+        
+        .last-play {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* margin-bottom: 1rem; */
+        }
+        
+        .last-play-list {
+            /* width: 100%; */
+            /* margin-bottom: 1rem; */
+            /* background: rgba(255,255,255,0.05); */
+            /* border-radius: 0.5rem; */
+            /* padding: 1rem; */
+        }
+        
+        .last-play-list h4 {
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            text-align: center;
+        }
+        
+        #playHistoryContainer {
+            display: flex;
+            /* gap: 0.5rem; */
+            overflow-x: auto;
+            /* padding: 0.5rem 0; */
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        #playHistoryContainer > div:first-of-type{
+          display: none;
+        }
+        
+        #playHistoryContainer::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        #playHistoryContainer::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+        }
+        
+        #playHistoryContainer::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+        }
+        
+        .history-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+            max-width: 100px;
+            /* padding: 0.5rem 0.3rem; */
+            /* background: rgba(0,0,0,0.3); */
+            border-radius: 0.3rem;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+        
+        .history-cards {
+            display: flex;
+            gap: 2px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 0.3rem;
+            max-width: 90px;
+        }
+        
+        .history-card {
+            width: 20px;
+            height: 28px;
+            background: white;
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            font-weight: bold;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            line-height: 1;
+        }
+        
+        .history-card.red {
+            color: #ff4444;
+        }
+        
+        .history-card.black {
+            color: #333;
+        }
+        
+        .history-player {
+            color: #ccc;
+            font-size: 0.7rem;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+        
+        .player-hand {
+            background: rgba(0,0,0,0.3);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            width: 100%;
+            max-width: 800px;
+            transition: all 0.3s ease;
+        }
+        
+        .player-hand.my-turn {
+            border: 2px solid #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .player-hand > h3{
+            margin-bottom: 2rem;
+        }
+        
+        .hand-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 1rem;
+            min-height: 200px;
+        }
+        
+        .card {
+            width: 75px;
+            height: 105px;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.1);
+            position: relative;
+            user-select: none;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            border: 0px solid #e0e0e0;
+            border-radius: 6px;
+            pointer-events: none;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .card.selected {
+            transform: translateY(-10px) scale(1.05);
+            border-color: #ffd700;
+            box-shadow: 0 6px 12px rgba(255,215,0,0.4), 0 0 0 2px #ffd700;
+            background: linear-gradient(145deg, #fffef0, #faf8e0);
+        }
+        
+        .card .card-value {
+            font-size: 1.1rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+        
+        .card .card-suit {
+            font-size: 1.6rem;
+            line-height: 1;
+            margin: 4px 0;
+        }
+        
+        .card .card-value-bottom {
+            opacity: 0;
+            font-size: 0.85rem;
+            font-weight: bold;
+            line-height: 1;
+            transform: rotate(180deg);
+        }
+        
+        .card.red {
+            color: #d32f2f;
+        }
+        
+        .card.black {
+            color: #333;
+        }
+        
+        .card-back {
+            background: linear-gradient(45deg, #1565c0, #0d47a1);
+            color: white;
+            justify-content: center;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+            min-height: 44px; /* 터치 최소 크기 */
+            font-size: 1rem;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            touch-action: manipulation;
+        }
+        
+        #playBtn{
+            background: #5ee742;
+        }
+        
+        .btn.primary:disabled {
+            background: #424242 !important;
+            color: #888 !important;
+            cursor: not-allowed;
+        }
+        
+        
+        .btn.secondary {
+            background: hsl(354, 81%, 63%);
+            color: white;
+        }
+        
+        
+        
+        .game-info {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0,0,0,0.8);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            display: none; /* 초기에는 숨김 */
+            z-index: 1;
+        }
+        
+        .pass-indicator {
+            position: fixed;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            background: rgba(255, 152, 0, 0.9);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            font-size: 1rem;
+            border: 2px solid #ff9800;
+            display: none;
+            z-index: 100;
+            animation: fadeInOut 2s ease-in-out;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(-50%) translateX(20px); }
+            20% { opacity: 1; transform: translateY(-50%) translateX(0); }
+            80% { opacity: 1; transform: translateY(-50%) translateX(0); }
+            100% { opacity: 0; transform: translateY(-50%) translateX(20px); }
+        }
+        
+      .message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* width: 100vw; */
+            /* height: 100vw; */
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            z-index: 1000;
+            display: none;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+        .victory-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* width: 60%; */
+            /* height: 50%; */
+            /* background: rgba(0, 0, 0, 0.85); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            /* backdrop-filter: blur(10px); */
+            border-radius: 1rem;
+            /* padding: 0rem; */
+            /* height: 100%; */
+        }
+        
+        .victory-content {
+            text-align: center;
+            background: rgb(0 0 0 / 91%);
+            /* padding: 3rem; */
+            border-radius: 2rem;
+            /* border: 3px solid #ffd700; */
+            /* box-shadow: 0 0 50px rgba(255, 215, 0, 0.5); */
+            /* backdrop-filter: blur(15px); */
+            /* animation: victoryPulse 2s ease-in-out infinite alternate; */
+            /* padding: 2rem; */
+        }
+        
+        .victory-title {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ffd700, #ffed4e, #fff176);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+            margin-bottom: 1rem;
+            animation: victoryGlow 1.5s ease-in-out infinite alternate;
+        }
+        
+        .victory-subtitle {
+            font-size: 1.25rem;
+            /* color: #fff; */
+            margin-bottom: 1rem;
+            /* opacity: 0.9; */
+            padding: 2rem;
+        }
+        
+        .victory-emoji {
+            font-size: 2rem;
+            padding: 3rem;
+            animation: victoryBounce 1s ease-in-out infinite;
+        }
+        
+        @keyframes victoryPulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+        
+        @keyframes victoryGlow {
+            0% { text-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+            100% { text-shadow: 0 0 50px rgba(255, 215, 0, 1); }
+        }
+        
+        @keyframes victoryBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .victory-fireworks {
+            /* position: absolute; */
+            /* width: 50%; */
+            /* height: 50%; */
+            /* pointer-events: none; */
+            /* overflow: hidden; */
+        }
+        
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: fireworkAnimation 2s ease-out infinite;
+        }
+        
+        @keyframes fireworkAnimation {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 1;
+            }
+            15% {
+                transform: translateY(30vh) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(20vh) scale(0);
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .opponents {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .hand-cards {
+                gap: 3px;
+            }
+            
+            .card {
+                width: 60px;
+                height: 84px;
+                font-size: 0.9rem;
+                padding: 5px;
+                border-radius: 8px;
+            }
+            
+            .card .card-value {
+                font-size: 0.95rem;
+            }
+            
+            .card .card-suit {
+                font-size: 1.3rem;
+                margin: 3px 0;
+            }
+            
+            .card .card-value-bottom {
+                font-size: 0.75rem;
+            }
+            
+            .controls {
+                position: fixed;
+                width: 100%;
+                background: #11111199;
+                transform: translateX(-50%);
+                left: 50%;
+                bottom: 0%;
+            }
+            
+            .controls > div{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                /* gap: 1rem; */
+                width: 90%;
+                margin: 1rem auto;
+                /* padding: 1rem 0; */
+            }
+            
+            .btn {
+                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
+                width: 100%;
+                border-radius: 0.5rem;
+                font-size: 0.75rem;
+                padding: 0;
+                width: 90%;
+            }
+            
+            .btn:active {
+                transform: scale(0.98);
+            }
+            
+            
+            .btn.secondary:active {
+                background-color: rgba(117, 117, 117, 0.8);
+            }
+            
+        }
+    </style>
+<!-- /head -->
+
+</head>
+<body>
+  
+  <!-- Game Header -->
+  <div class="game-header">
+    <h1>Tiến Lên</h1>
+    <p>베트남 전통 카드게임 • 13장씩 4명이 플레이</p>
+    <button class="rules-toggle" onclick="toggleRules()">
+      <div>
+      <span class="material-symbols-outlined">undereye</span>
+      <span>규칙 및 족보</span>
+      </div>
+    </button>
+    
+    <div class="rules-panel" id="rulesPanel">
+      <h3>🎯 게임 규칙</h3>
+      <ul style="text-align: left; margin: 1rem 0;">
+        <li><strong>목표:</strong> 13장의 카드를 가장 먼저 모두 내는 사람이 승리</li>
+        <li><strong>시작:</strong> 3♠을 가진 플레이어가 첫 번째로 카드를 냄</li>
+        <li><strong>스트레이트 규칙:</strong> 스페이드 3으로 시작하는 스트레이트는 같은 모양만 사용 가능</li>
+        <li><strong>진행:</strong> 시계방향으로 더 강한 카드/조합을 내거나 패스</li>
+        <li><strong>싱글카드 규칙:</strong> 싱글카드가 나온 후에는 같은 무늬의 카드만 낼 수 있음 (단, 숫자 2는 예외)</li>
+        <li><strong>패스:</strong> 모든 플레이어가 패스하면 마지막에 카드를 낸 사람이 새로 시작</li>
+      </ul>
+      
+      <h3>📊 카드 강도 (약함 → 강함)</h3>
+      <p><strong>숫자:</strong> 3 &lt; 4 &lt; 5 &lt; 6 &lt; 7 &lt; 8 &lt; 9 &lt; 10 &lt; J &lt; Q &lt; K &lt; A &lt; 2</p>
+      <p><strong>무늬:</strong> ♠(스페이드) &lt; ♣(클럽) &lt; ♦(다이아) &lt; ♥(하트)</p>
+      
+      <h3>🎭 족보 (조합)</h3>
+      <div style="text-align: left; margin: 1rem 0;">
+        <p><strong>1. 싱글:</strong> 단일 카드</p>
+        <p style="margin-left: 1rem; color: #ffeb3b; font-size: 0.9rem;">• 싱글카드 후에는 같은 무늬만 낼 수 있음</p>
+        <p style="margin-left: 1rem; color: #4cd137; font-size: 0.85rem;">✅ 예외: 숫자 2는 어떤 무늬든 상관없이 낼 수 있음</p>
+        <p><strong>2. 페어:</strong> 같은 숫자 2장 (같은 색상만 가능)</p>
+        <p style="margin-left: 1rem; color: #ffeb3b; font-size: 0.9rem;">• 빨간색: ♦(다이아) + ♥(하트) / 검은색: ♠(스페이드) + ♣(클럽)</p>
+        <p style="margin-left: 1rem; color: #ff6b6b; font-size: 0.85rem;">⚠️ 빨간색+검은색 혼합 불가 (K♦+K♠ ❌ / A♥+A♣ ❌)</p>
+        <p><strong>3. 트리플:</strong> 같은 숫자 3장</p>
+        <p><strong>4. 스트레이트:</strong> 연속된 숫자 3장 이상, 같은 무늬</p>
+        <p style="margin-left: 1rem; color: #ffeb3b; font-size: 0.9rem;">• 모든 카드가 같은 무늬여야 함 (♠♠♠, ♣♣♣, ♦♦♦, ♥♥♥)</p>
+        <p style="margin-left: 1rem; color: #4cd137; font-size: 0.85rem;">✅ 3♠ 포함 스트레이트: 반드시 모든 카드가 같은 무늬여야 함</p>
+        <p style="margin-left: 1rem; color: #ff6b6b; font-size: 0.85rem;">⚠️ 숫자 2는 스트레이트에 포함 불가 (3-4-5 ✅ / Q-K-A ✅ / K-A-2 ❌)</p>
+        <p><strong>5. 더블 스트레이트:</strong> 연속된 페어 3쌍 이상 (모든 카드가 같은 무늬)</p>
+        <p><strong>6. 쿼드러플:</strong> 같은 숫자 4장 (최강)</p>
+      </div>
+      
+      <p style="color: #ffd700; font-weight: bold;">💡 2는 가장 강한 카드지만, 스트레이트에는 전혀 사용할 수 없습니다</p>
+    </div>
+  </div>
+
+  <!-- Game Info -->
+  <div class="game-info">
+    <div>턴: <span id="currentTurn">Player</span></div>
+    <div>남은 카드: <span id="cardsLeft">13</span>장</div>
+    <div>선택된 카드: <span id="selectedCount">0</span>장</div>
+    <div id="suitRequirement" style="display: none;">필요 모양: <span id="requiredSuit"></span></div>
+  </div>
+
+  <!-- Pass Indicator -->
+  <div class="pass-indicator" id="passIndicator">
+    <div id="passMessage">🚫 패스</div>
+  </div>
+
+  <!-- Game Start Screen -->
+  <div id="gameStartScreen" class="game-start-screen">
+    <div class="start-content">
+      <button class="btn primary start-game-btn"
+      style="font-size:calc(1.5rem - 0.25em); padding: 1.5rem 3rem;" 
+      onclick="startGameCountdown()">Start Game</button>
+    </div>
+  </div>
+
+  <!-- Countdown Screen -->
+  <div id="countdownScreen" class="countdown-screen" style="display: none;">
+    <div class="countdown-content">
+      <div id="countdownText">Ready</div>
+    </div>
+  </div>
+
+  <!-- Game Board -->
+  <div class="game-board" id="gameBoard" style="display: none;">
+    <!-- Opponents -->
+    <div class="opponents">
+      <div class="player" id="player1">
+        <h4>AI 1</h4>
+        <p><span id="p1Cards">13</span>장</p>
+      </div>
+      <div class="player" id="player2">
+        <h4>AI 2</h4>
+        <p><span id="p2Cards">13</span>장</p>
+      </div>
+      <div class="player" id="player3">
+        <h4>AI 3</h4>
+        <p><span id="p3Cards">13</span>장</p>
+      </div>
+    </div>
+
+    <!-- Center Play Area -->
+    <div class="center-area">
+      <h3></h3>
+      <ul class="zqco">
+      <div class="last-play-list">
+        <div id="playHistoryContainer">
+          <p style="color: #999; text-align: center; font-size: 0.9rem;"></p>
+        </div>
+      </div>
+
+      <div class="last-play" id="lastPlay">
+        <p style="color: #999;">카드가 나오지 않았습니다</p>
+      </div>
+      </ul>
+
+      <p id="lastPlayer">by: -</p>
+    </div>
+
+    <!-- Player Hand -->
+    <div class="player-hand" style="margin-bottom: calc(3rem + 20vw);">
+      <h3>My Hand</h3>
+      <div class="hand-cards" id="playerHand">
+        <!-- Player cards will be inserted here -->
+      </div>
+      <div class="controls">
+        <div>
+        <button class="btn primary" id="playBtn" onclick="playCards()" disabled>Play a card</button>
+        <button class="btn secondary" id="passBtn" onclick="passturn()">Pass</button>
+        <!-- <button class="btn secondary" onclick="clearSelection()">선택 해제</button> -->
+        <button class="btn primary" onclick="newGame()" style="background: hsl(217, 15%, 83%);">New Game</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Message Dialog -->
+  <div class="message" id="messageDialog">
+    <p id="messageText"></p>
+    <button class="btn primary" onclick="hideMessage()" style="margin-top: 1rem;">확인</button>
+  </div>
+
+  <script>
+    // Game State
+    let gameState = {
+        deck: [],
+        players: [[], [], [], []], // AI1, AI2, AI3, Player
+        currentPlayer: 0,
+        lastPlay: [],
+        lastPlayer: -1,
+        selectedCards: [],
+        gameStarted: false,
+        passCount: 0,
+        playHistory: [], // 최근 플레이 히스토리 저장 (최대 4개)
+        isFirstRound: true, // 첫 번째 라운드 여부
+        lastPlaySuit: null // 마지막 싱글카드의 모양 (같은 모양 강제 규칙용)
+    };
+
+    // Card suits and values
+    const suits = ['♠', '♣', '♦', '♥'];
+    const values = ['3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A', '2'];
+    const valueOrder = { '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'J': 11, 'Q': 12, 'K': 13, 'A': 14, '2': 15 };
+    const suitOrder = { '♠': 1, '♣': 2, '♦': 3, '♥': 4 };
+
+    // Initialize game
+    function initGame() {
+        createDeck();
+        shuffleDeck();
+        dealCards();
+        findStartingPlayer();
+        
+        // Force start with 3♠ (or combo including 3♠) if current player is AI
+        if (gameState.currentPlayer !== 3) {
+            setTimeout(() => {
+                const aiHand = gameState.players[gameState.currentPlayer];
+                const validStartingPlays = findValidStartingPlays(aiHand);
+                
+                if (validStartingPlays.length > 0) {
+                    // Choose the best starting play (prefer longer combos)
+                    const bestPlay = validStartingPlays.reduce((best, current) => 
+                        current.length > best.length ? current : best
+                    );
+                    
+                    // Play the selected combo
+                    bestPlay.sort((a, b) => b - a); // Sort in descending order for removal
+                    const playedCards = bestPlay.map(index => aiHand[index]);
+                    bestPlay.forEach(index => {
+                        aiHand.splice(index, 1);
+                    });
+                    
+                    gameState.lastPlay = playedCards;
+                    gameState.lastPlayCombo = analyzeCombo(playedCards);
+                    gameState.lastPlayer = gameState.currentPlayer;
+                    gameState.passCount = 0;
+                    gameState.isFirstRound = false; // 첫 번째 라운드 종료
+                    
+                    // 싱글카드 플레이시 모양 추적
+                    const combo = analyzeCombo(playedCards);
+                    if (combo.type === 'single') {
+                        gameState.lastPlaySuit = playedCards[0].suit;
+                    } else {
+                        gameState.lastPlaySuit = null; // 싱글카드가 아니면 모양 제한 해제
+                    }
+                    
+                    // 플레이 히스토리에 추가
+                    addToPlayHistory(playedCards, gameState.currentPlayer);
+                    
+                    nextTurn();
+                    renderGame();
+                    updateGameInfo();
+                }
+            }, 1000);
+        }
+        
+        renderGame();
+        updateGameInfo();
+    }
+
+    // Create standard 52-card deck
+    function createDeck() {
+        gameState.deck = [];
+        for (let suit of suits) {
+            for (let value of values) {
+                gameState.deck.push({
+                    value: value,
+                    suit: suit,
+                    strength: valueOrder[value],
+                    suitStrength: suitOrder[suit]
+                });
+            }
+        }
+    }
+
+    // Shuffle deck
+    function shuffleDeck() {
+        for (let i = gameState.deck.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [gameState.deck[i], gameState.deck[j]] = [gameState.deck[j], gameState.deck[i]];
+        }
+    }
+
+    // Deal 13 cards to each player
+    function dealCards() {
+        gameState.players = [[], [], [], []];
+        for (let i = 0; i < 52; i++) {
+            gameState.players[i % 4].push(gameState.deck[i]);
+        }
+        
+        // Sort each player's hand
+        gameState.players.forEach(hand => {
+            hand.sort((a, b) => {
+                if (a.strength !== b.strength) return a.strength - b.strength;
+                return a.suitStrength - b.suitStrength;
+            });
+        });
+    }
+
+    // Find player with 3 of spades
+    function findStartingPlayer() {
+        for (let i = 0; i < 4; i++) {
+            for (let card of gameState.players[i]) {
+                if (card.value === '3' && card.suit === '♠') {
+                    gameState.currentPlayer = i;
+                    gameState.gameStarted = true;
+                    return;
+                }
+            }
+        }
+    }
+    
+    // Find valid starting play combinations that include 3♠
+    function findValidStartingPlays(hand) {
+        const spade3Index = hand.findIndex(card => card.value === '3' && card.suit === '♠');
+        if (spade3Index === -1) return [];
+        
+        const validPlays = [];
+        const spade3Card = hand[spade3Index];
+        
+        // Single 3♠
+        validPlays.push([spade3Index]);
+        
+        // Try pairs with 3♠
+        for (let i = 0; i < hand.length; i++) {
+            if (i !== spade3Index && hand[i].value === '3') {
+                if (isSameColor(spade3Card, hand[i])) {
+                    validPlays.push([spade3Index, i].sort((a, b) => a - b));
+                }
+            }
+        }
+        
+        // Try triples with 3♠
+        const other3s = [];
+        for (let i = 0; i < hand.length; i++) {
+            if (i !== spade3Index && hand[i].value === '3') {
+                other3s.push(i);
+            }
+        }
+        if (other3s.length >= 2) {
+            validPlays.push([spade3Index, ...other3s].sort((a, b) => a - b));
+        }
+        
+        // Try straights starting with 3♠
+        const straightPlays = findStraightsWithCard(hand, spade3Index);
+        validPlays.push(...straightPlays);
+        
+        // Try double straights starting with 3♠ pair
+        for (let play of validPlays) {
+            if (play.length === 2) {
+                const doubleStraightPlays = findDoubleStraightsWithPair(hand, play);
+                validPlays.push(...doubleStraightPlays);
+            }
+        }
+        
+        return validPlays.filter(play => play.length > 0);
+    }
+    
+    // Find straights that include a specific card
+    function findStraightsWithCard(hand, cardIndex) {
+        const targetCard = hand[cardIndex];
+        
+        // Cannot create straight if target card is a '2'
+        if (targetCard.value === '2') {
+            return [];
+        }
+        
+        const straights = [];
+        const targetSuit = targetCard.suit;
+        
+        // Try different straight lengths starting from the target card
+        for (let length = 3; length <= 13; length++) {
+            const straight = [cardIndex];
+            
+            // Find cards for straight going up
+            for (let strength = targetCard.strength + 1; strength <= targetCard.strength + length - 1; strength++) {
+                const nextCard = hand.findIndex((card, idx) => 
+                    card.strength === strength && 
+                    card.value !== '2' &&  // Cannot include 2s in straights
+                    idx !== cardIndex && 
+                    !straight.includes(idx) &&
+                    card.suit === targetSuit  // 같은 무늬인지 확인
+                );
+                if (nextCard !== -1) {
+                    straight.push(nextCard);
+                } else {
+                    break;
+                }
+            }
+            
+            if (straight.length >= 3) {
+                straights.push([...straight].sort((a, b) => a - b));
+            }
+        }
+        
+        return straights;
+    }
+    
+    // Find double straights that include a specific pair
+    function findDoubleStraightsWithPair(hand, pairIndices) {
+        if (pairIndices.length !== 2) return [];
+        
+        const pairValue = hand[pairIndices[0]].strength;
+        const doubleStraights = [];
+        
+        // Try to extend the pair into a double straight
+        for (let length = 3; length <= 6; length++) {
+            const doubleStraight = [...pairIndices];
+            
+            // Find pairs for consecutive values
+            for (let strength = pairValue + 1; strength <= pairValue + length - 1; strength++) {
+                const pairs = findPairsForValue(hand, strength, doubleStraight);
+                if (pairs.length >= 2) {
+                    doubleStraight.push(...pairs.slice(0, 2));
+                } else {
+                    break;
+                }
+            }
+            
+            if (doubleStraight.length >= 6 && doubleStraight.length % 2 === 0) {
+                doubleStraights.push([...doubleStraight].sort((a, b) => a - b));
+            }
+        }
+        
+        return doubleStraights;
+    }
+    
+    // Find pairs for a specific value
+    function findPairsForValue(hand, targetStrength, excludeIndices = []) {
+        const candidates = [];
+        for (let i = 0; i < hand.length; i++) {
+            if (!excludeIndices.includes(i) && hand[i].strength === targetStrength) {
+                candidates.push(i);
+            }
+        }
+        
+        const pairs = [];
+        for (let i = 0; i < candidates.length - 1; i++) {
+            for (let j = i + 1; j < candidates.length; j++) {
+                if (isSameColor(hand[candidates[i]], hand[candidates[j]])) {
+                    pairs.push(candidates[i], candidates[j]);
+                    break;
+                }
+            }
+        }
+        
+        return pairs;
+    }
+
+    // Render game state
+    function renderGame() {
+        renderPlayerHand();
+        renderLastPlay();
+        updateActivePlayer();
+        updateCardCounts();
+    }
+
+    // Render player's hand
+    function renderPlayerHand() {
+        const handElement = document.getElementById('playerHand');
+        handElement.innerHTML = '';
+        
+        gameState.players[3].forEach((card, index) => {
+            const cardElement = document.createElement('div');
+            cardElement.className = `card ${card.suit === '♦' || card.suit === '♥' ? 'red' : 'black'}`;
+            
+            // 실제 카드처럼 구조화된 HTML
+            cardElement.innerHTML = `
+                <div class="card-value">${card.value}</div>
+                <div class="card-suit">${card.suit}</div>
+                <div class="card-value-bottom">${card.value}</div>
+            `;
+            
+            cardElement.addEventListener('click', () => selectCard(index));
+            handElement.appendChild(cardElement);
+        });
+    }
+
+    // Select/deselect card
+    function selectCard(index) {
+        const cardElement = document.getElementById('playerHand').children[index];
+        const selectedIndex = gameState.selectedCards.indexOf(index);
+        
+        if (selectedIndex > -1) {
+            gameState.selectedCards.splice(selectedIndex, 1);
+            cardElement.classList.remove('selected');
+        } else {
+            gameState.selectedCards.push(index);
+            cardElement.classList.add('selected');
+        }
+        
+        updateGameInfo();
+        validatePlay();
+    }
+
+    // Clear selection
+    function clearSelection() {
+        gameState.selectedCards = [];
+        document.querySelectorAll('.card.selected').forEach(card => {
+            card.classList.remove('selected');
+        });
+        updateGameInfo();
+        validatePlay();
+    }
+
+    // Validate if selected cards can be played
+    function validatePlay() {
+        const playBtn = document.getElementById('playBtn');
+        
+        if (gameState.selectedCards.length === 0) {
+            playBtn.disabled = true;
+            return;
+        }
+
+        const selectedCardObjects = gameState.selectedCards.map(i => gameState.players[3][i]);
+        const combo = analyzeCombo(selectedCardObjects);
+        
+        if (!combo.valid) {
+            playBtn.disabled = true;
+            return;
+        }
+
+        // 첫 번째 라운드이고 마지막 플레이가 없을 때만 3♠ 검증
+        if (gameState.isFirstRound && gameState.lastPlay.length === 0) {
+            const hasSpade3 = selectedCardObjects.some(card => 
+                card.value === '3' && card.suit === '♠'
+            );
+            
+            if (hasSpade3) {
+                playBtn.disabled = false;
+            } else {
+                playBtn.disabled = true;
+            }
+            return;
+        }
+        
+        // 새 라운드 시작 (모든 플레이어가 패스한 후)
+        if (gameState.lastPlay.length === 0) {
+            playBtn.disabled = false;
+            return;
+        }
+
+        if (canBeat(combo, gameState.lastPlayCombo)) {
+            playBtn.disabled = false;
+        } else {
+            playBtn.disabled = true;
+        }
+    }
+
+    // Check if cards have same color (red or black)
+    function isSameColor(card1, card2) {
+        const redSuits = ['♦', '♥']; // 다이아, 하트
+        const blackSuits = ['♠', '♣']; // 스페이드, 클럽
+        
+        const card1IsRed = redSuits.includes(card1.suit);
+        const card2IsRed = redSuits.includes(card2.suit);
+        
+        return card1IsRed === card2IsRed;
+    }
+
+    // Check if card is red
+    function isRed(card) {
+        return card.suit === '♦' || card.suit === '♥';
+    }
+
+    // Analyze card combination
+    function analyzeCombo(cards) {
+        if (cards.length === 0) return { valid: false };
+        
+        cards.sort((a, b) => {
+            if (a.strength !== b.strength) return a.strength - b.strength;
+            return a.suitStrength - b.suitStrength;
+        });
+
+        // Single card
+        if (cards.length === 1) {
+            return {
+                valid: true,
+                type: 'single',
+                strength: cards[0].strength,
+                suitStrength: cards[0].suitStrength,
+                cards: cards
+            };
+        }
+
+        // Pair
+        if (cards.length === 2) {
+            if (cards[0].strength === cards[1].strength && isSameColor(cards[0], cards[1])) {
+                return {
+                    valid: true,
+                    type: 'pair',
+                    strength: cards[0].strength,
+                    suitStrength: Math.max(cards[0].suitStrength, cards[1].suitStrength),
+                    cards: cards
+                };
+            }
+            return { valid: false };
+        }
+
+        // Triple
+        if (cards.length === 3) {
+            if (cards[0].strength === cards[1].strength && cards[1].strength === cards[2].strength) {
+                return {
+                    valid: true,
+                    type: 'triple',
+                    strength: cards[0].strength,
+                    suitStrength: Math.max(cards[0].suitStrength, cards[1].suitStrength, cards[2].suitStrength),
+                    cards: cards
+                };
+            }
+            
+            // Check for straight
+            if (isStraight(cards)) {
+                return {
+                    valid: true,
+                    type: 'straight',
+                    strength: cards[cards.length - 1].strength,
+                    suitStrength: cards[cards.length - 1].suitStrength,
+                    cards: cards
+                };
+            }
+            return { valid: false };
+        }
+
+        // Quadruple
+        if (cards.length === 4) {
+            if (cards[0].strength === cards[1].strength && 
+                cards[1].strength === cards[2].strength && 
+                cards[2].strength === cards[3].strength) {
+                return {
+                    valid: true,
+                    type: 'quadruple',
+                    strength: cards[0].strength,
+                    suitStrength: Math.max(...cards.map(c => c.suitStrength)),
+                    cards: cards
+                };
+            }
+        }
+
+        // Straight (5+ cards)
+        if (cards.length >= 3 && isStraight(cards)) {
+            return {
+                valid: true,
+                type: 'straight',
+                strength: cards[cards.length - 1].strength,
+                suitStrength: cards[cards.length - 1].suitStrength,
+                cards: cards
+            };
+        }
+
+        // Double straight (3+ pairs)
+        if (cards.length >= 6 && cards.length % 2 === 0) {
+            if (isDoubleStraight(cards)) {
+                return {
+                    valid: true,
+                    type: 'doubleStraight',
+                    strength: cards[cards.length - 1].strength,
+                    suitStrength: Math.max(...cards.slice(-2).map(c => c.suitStrength)),
+                    cards: cards
+                };
+            }
+        }
+
+        return { valid: false };
+    }
+
+    // Check if cards form a straight
+    function isStraight(cards) {
+        // Check if any card is a '2' - straights cannot contain 2s
+        for (let card of cards) {
+            if (card.value === '2') {
+                return false;
+            }
+        }
+        
+        // Check if all cards have the same suit (♠, ♣, ♦, ♥)
+        const firstSuit = cards[0].suit;
+        for (let i = 1; i < cards.length; i++) {
+            if (cards[i].suit !== firstSuit) {
+                return false;
+            }
+        }
+        
+        // Check if cards are consecutive
+        for (let i = 1; i < cards.length; i++) {
+            if (cards[i].strength !== cards[i-1].strength + 1) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Check if cards form a double straight
+    function isDoubleStraight(cards) {
+        if (cards.length % 2 !== 0) return false;
+        
+        // Check if all cards have the same suit
+        const firstSuit = cards[0].suit;
+        for (let card of cards) {
+            if (card.suit !== firstSuit) {
+                return false;
+            }
+        }
+        
+        for (let i = 0; i < cards.length; i += 2) {
+            if (i + 1 >= cards.length || cards[i].strength !== cards[i + 1].strength) {
+                return false;
+            }
+            // 각 페어도 같은 색상이어야 함 (이제 같은 suit이므로 자동으로 만족)
+            if (!isSameColor(cards[i], cards[i + 1])) {
+                return false;
+            }
+            if (i > 0 && cards[i].strength !== cards[i - 2].strength + 1) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Check if combo1 can beat combo2
+    function canBeat(combo1, combo2) {
+        if (!combo1.valid || !combo2.valid) return false;
+        
+        // Quadruple beats everything
+        if (combo1.type === 'quadruple') return true;
+        if (combo2.type === 'quadruple') return false;
+        
+        // Single card rule: must play same suit (except for number 2)
+        if (combo1.type === 'single' && combo2.type === 'single') {
+            // 숫자 2는 모양 제한 없이 낼 수 있음
+            if (combo1.cards[0].value === '2') {
+                return combo1.strength > combo2.strength;
+            }
+            
+            // Check if must play same suit
+            if (gameState.lastPlaySuit && combo1.cards[0].suit !== gameState.lastPlaySuit) {
+                return false; // 같은 모양이 아니면 낼 수 없음 (2 제외)
+            }
+            
+            // Same suit: compare strength
+            if (combo1.cards[0].suit === combo2.cards[0].suit) {
+                return combo1.strength > combo2.strength;
+            }
+            
+            // Different suits are not allowed when lastPlaySuit is set (except for 2)
+            return false;
+        }
+        
+        // Straight rule: must play same suit if last play was a straight
+        if (combo1.type === 'straight' && combo2.type === 'straight') {
+            // 스트레이트는 같은 모양의 카드만 낼 수 있음
+            if (combo1.cards.length === combo2.cards.length) {
+                // 모든 카드가 같은 모양이어야 함
+                const firstSuit = combo2.cards[0].suit;
+                if (!combo1.cards.every(card => card.suit === firstSuit)) {
+                    return false; // 다른 모양이 섞여있으면 불가
+                }
+                
+                // 같은 모양이고 더 강한 수에서 시작하면 가능
+                if (combo1.strength > combo2.strength) {
+                    return true;
+                }
+                if (combo1.strength === combo2.strength && combo1.suitStrength > combo2.suitStrength) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        // Same type comparison (non-single cards)
+        if (combo1.type === combo2.type && combo1.cards.length === combo2.cards.length) {
+            if (combo1.strength > combo2.strength) return true;
+            if (combo1.strength === combo2.strength && combo1.suitStrength > combo2.suitStrength) return true;
+        }
+        
+        return false;
+    }
+
+    // Play selected cards
+    function playCards() {
+        if (gameState.currentPlayer !== 3) return;
+        
+        // Disable play button immediately when clicked
+        const playBtn = document.getElementById('playBtn');
+        playBtn.disabled = true;
+        
+        const selectedCardObjects = gameState.selectedCards.map(i => gameState.players[3][i]);
+        const combo = analyzeCombo(selectedCardObjects);
+        
+        if (!combo.valid) {
+            showMessage('올바르지 않은 카드 조합입니다.');
+            return;
+        }
+        
+        // 첫 번째 라운드이고 마지막 플레이가 없을 때만 3♠ 검증
+        if (gameState.isFirstRound && gameState.lastPlay.length === 0) {
+            const hasSpade3 = selectedCardObjects.some(card => 
+                card.value === '3' && card.suit === '♠'
+            );
+            
+            if (!hasSpade3) {
+                showMessage('게임 시작 시에는 반드시 3♠을 포함한 조합을 내야 합니다.');
+                return;
+            }
+        }
+
+        // Remove cards from player's hand
+        gameState.selectedCards.sort((a, b) => b - a); // Sort in descending order
+        gameState.selectedCards.forEach(index => {
+            gameState.players[3].splice(index, 1);
+        });
+
+        gameState.lastPlay = selectedCardObjects;
+        gameState.lastPlayCombo = combo;
+        gameState.lastPlayer = 3;
+        gameState.selectedCards = [];
+        gameState.passCount = 0;
+        gameState.isFirstRound = false; // 첫 번째 라운드 종료
+        
+        // 싱글카드 플레이시 모양 추적
+        if (combo.type === 'single') {
+            gameState.lastPlaySuit = selectedCardObjects[0].suit;
+        } else {
+            gameState.lastPlaySuit = null; // 싱글카드가 아니면 모양 제한 해제
+        }
+        
+        // 선택된 카드들의 selected 클래스 제거
+        document.querySelectorAll('#playerHand .card.selected').forEach(card => {
+            card.classList.remove('selected');
+        });
+        
+        // 플레이 히스토리에 추가
+        addToPlayHistory(selectedCardObjects, 3);
+
+        // Check win condition BEFORE UI updates
+        const playerWon = gameState.players[3].length === 0;
+        
+        // Always update UI first
+        renderGame();
+        updateGameInfo();
+        
+        // Handle victory or continue game
+        if (playerWon) {
+            setTimeout(() => {
+                showVictoryMessage('축하합니다! 승리하셨습니다!', true);
+            }, 300);
+        } else {
+            nextTurn();
+        }
+    }
+
+    // Pass turn
+    function passturn() {
+        if (gameState.currentPlayer !== 3) return;
+        
+        gameState.passCount++;
+        
+        // Show pass indicator instead of center message
+        showPassIndicator('나');
+        
+        // If all players pass, clear the table and return to last player
+        if (gameState.passCount >= 3) {
+            setTimeout(() => {
+                gameState.lastPlay = [];
+                gameState.lastPlayCombo = null;
+                gameState.passCount = 0;
+                gameState.lastPlaySuit = null; // 새 라운드 시작시 모양 제한 해제
+                
+                // Set current player to the one who played the last cards
+                gameState.currentPlayer = gameState.lastPlayer;
+                
+                updateActivePlayer();
+                renderGame();
+                updateGameInfo();
+                
+                // If the last player was AI, let them start
+                if (gameState.currentPlayer !== 3) {
+                    setTimeout(() => aiTurn(), 1000);
+                } else {
+                    // Update validation for player's turn after clearing
+                    validatePlay();
+                }
+            }, 1500);
+            return; // Don't call nextTurn() here
+        }
+        
+        nextTurn();
+        updateGameInfo();
+    }
+
+    // Next turn
+    function nextTurn() {
+        gameState.currentPlayer = (gameState.currentPlayer + 1) % 4;
+        
+        updateActivePlayer();
+        
+        // Only call AI turn if it's actually an AI's turn
+        if (gameState.currentPlayer !== 3) {
+            setTimeout(() => aiTurn(), 1000);
+        } else {
+            // Player's turn - update play validation
+            validatePlay();
+        }
+    }
+
+    // AI turn
+    function aiTurn() {
+        // Safety check: only run if it's actually an AI's turn
+        if (gameState.currentPlayer === 3) {
+            return;
+        }
+        
+        const aiHand = gameState.players[gameState.currentPlayer];
+        const playableCards = findAIPlay(aiHand);
+        
+        if (playableCards.length > 0) {
+            // AI plays cards
+            playableCards.sort((a, b) => b - a);
+            const playedCards = playableCards.map(index => aiHand[index]);
+            playableCards.forEach(index => {
+                aiHand.splice(index, 1);
+            });
+            
+            gameState.lastPlay = playedCards;
+            gameState.lastPlayCombo = analyzeCombo(playedCards);
+            gameState.lastPlayer = gameState.currentPlayer;
+            gameState.passCount = 0;
+            gameState.isFirstRound = false; // 첫 번째 라운드 종료
+            
+            // 싱글카드 플레이시 모양 추적
+            const combo = analyzeCombo(playedCards);
+            if (combo.type === 'single') {
+                gameState.lastPlaySuit = playedCards[0].suit;
+            } else {
+                gameState.lastPlaySuit = null; // 싱글카드가 아니면 모양 제한 해제
+            }
+            
+            // 플레이 히스토리에 추가
+            addToPlayHistory(playedCards, gameState.currentPlayer);
+            
+            // Check AI win BEFORE UI updates
+            const aiWon = aiHand.length === 0;
+            
+            // Always update UI first
+            renderGame();
+            updateGameInfo();
+            
+            // Handle victory or continue game
+            if (aiWon) {
+                setTimeout(() => {
+                    showVictoryMessage(`AI ${gameState.currentPlayer + 1}이 승리했습니다! 다시 도전해보세요.`, false);
+                }, 300);
+            } else {
+                nextTurn();
+            }
+        } else {
+            // AI passes
+            gameState.passCount++;
+            
+            // Show AI pass indicator
+            const playerNames = ['AI 1', 'AI 2', 'AI 3', '나'];
+            showPassIndicator(playerNames[gameState.currentPlayer]);
+            
+            // If all players pass, clear the table and return to last player
+            if (gameState.passCount >= 3) {
+                setTimeout(() => {
+                    gameState.lastPlay = [];
+                    gameState.lastPlayCombo = null;
+                    gameState.passCount = 0;
+                    gameState.lastPlaySuit = null; // 새 라운드 시작시 모양 제한 해제
+                    
+                    // Set current player to the one who played the last cards
+                    gameState.currentPlayer = gameState.lastPlayer;
+                    
+                    updateActivePlayer();
+                    renderGame();
+                    updateGameInfo();
+                    
+                    // If the last player was AI, let them start
+                    if (gameState.currentPlayer !== 3) {
+                        setTimeout(() => aiTurn(), 1000);
+                    } else {
+                        // Update validation for player's turn after clearing
+                        validatePlay();
+                    }
+                }, 1500);
+                return; // Don't call nextTurn() here
+            }
+            
+            nextTurn();
+        }
+    }
+
+    // Find AI play strategy
+    function findAIPlay(hand) {
+        // If it's the start of new round (no last play), find best combo to play
+        if (gameState.lastPlay.length === 0) {
+            return findBestStartingCombo(hand);
+        }
+        
+        const targetCombo = gameState.lastPlayCombo;
+        
+        // Try to find matching combo that can beat the last play
+        for (let i = 0; i < hand.length; i++) {
+            if (targetCombo.type === 'single') {
+                const combo = analyzeCombo([hand[i]]);
+                if (canBeat(combo, targetCombo)) {
+                    return [i];
+                }
+            }
+        }
+        
+        // Try pairs
+        if (targetCombo.type === 'pair') {
+            for (let i = 0; i < hand.length - 1; i++) {
+                if (hand[i].strength === hand[i + 1].strength && isSameColor(hand[i], hand[i + 1])) {
+                    const combo = analyzeCombo([hand[i], hand[i + 1]]);
+                    if (canBeat(combo, targetCombo)) {
+                        return [i, i + 1];
+                    }
+                }
+            }
+        }
+        
+        // Try triples
+        if (targetCombo.type === 'triple') {
+            for (let i = 0; i < hand.length - 2; i++) {
+                if (hand[i].strength === hand[i + 1].strength && hand[i + 1].strength === hand[i + 2].strength) {
+                    const combo = analyzeCombo([hand[i], hand[i + 1], hand[i + 2]]);
+                    if (canBeat(combo, targetCombo)) {
+                        return [i, i + 1, i + 2];
+                    }
+                }
+            }
+        }
+        
+        // Try straights
+        if (targetCombo.type === 'straight') {
+            for (let start = 0; start < hand.length - 2; start++) {
+                // Skip if starting card is a '2' (straights cannot contain 2s)
+                if (hand[start].value === '2') continue;
+                
+                for (let length = targetCombo.cards.length; length <= Math.min(13, hand.length - start); length++) {
+                    const straight = [];
+                    
+                    // Check if we can form a straight of same suit
+                    let validStraight = true;
+                    const firstSuit = hand[start].suit;
+                    
+                    for (let i = 0; i < length; i++) {
+                        const cardIndex = start + i;
+                        if (cardIndex < hand.length && 
+                            hand[cardIndex].strength === hand[start].strength + i &&
+                            hand[cardIndex].value !== '2') {  // Cannot include 2s in straights
+                            if (hand[cardIndex].suit === firstSuit) {
+                                straight.push(cardIndex);
+                            } else {
+                                validStraight = false;
+                                break;
+                            }
+                        } else {
+                            validStraight = false;
+                            break;
+                        }
+                    }
+                    
+                    if (validStraight && straight.length >= 3) {
+                        const combo = analyzeCombo(straight.map(idx => hand[idx]));
+                        if (combo.valid && combo.type === 'straight' && canBeat(combo, targetCombo)) {
+                            return straight;
+                        }
+                    }
+                }
+            }
+        }
+        
+        return []; // Can't play, will pass
+    }
+    
+    // Find best starting combo for AI when starting new round
+    function findBestStartingCombo(hand) {
+        const possibleCombos = [];
+        
+        // Single cards
+        for (let i = 0; i < hand.length; i++) {
+            possibleCombos.push({
+                indices: [i],
+                combo: analyzeCombo([hand[i]]),
+                priority: 1
+            });
+        }
+        
+        // Pairs
+        for (let i = 0; i < hand.length - 1; i++) {
+            if (hand[i].strength === hand[i + 1].strength && isSameColor(hand[i], hand[i + 1])) {
+                possibleCombos.push({
+                    indices: [i, i + 1],
+                    combo: analyzeCombo([hand[i], hand[i + 1]]),
+                    priority: 2
+                });
+            }
+        }
+        
+        // Triples
+        for (let i = 0; i < hand.length - 2; i++) {
+            if (hand[i].strength === hand[i + 1].strength && hand[i + 1].strength === hand[i + 2].strength) {
+                possibleCombos.push({
+                    indices: [i, i + 1, i + 2],
+                    combo: analyzeCombo([hand[i], hand[i + 1], hand[i + 2]]),
+                    priority: 3
+                });
+            }
+        }
+        
+        // Straights (3+ cards) - check suit consistency
+        for (let start = 0; start < hand.length - 2; start++) {
+            // Skip if starting card is a '2' (straights cannot contain 2s)
+            if (hand[start].value === '2') continue;
+            
+            for (let length = 3; length <= Math.min(13, hand.length - start); length++) {
+                const straight = [];
+                let validStraight = true;
+                const firstSuit = hand[start].suit;
+                
+                for (let i = 0; i < length; i++) {
+                    const cardIndex = start + i;
+                    if (cardIndex < hand.length && 
+                        hand[cardIndex].strength === hand[start].strength + i &&
+                        hand[cardIndex].value !== '2') {  // Cannot include 2s in straights
+                        if (hand[cardIndex].suit === firstSuit) {
+                            straight.push(cardIndex);
+                        } else {
+                            validStraight = false;
+                            break;
+                        }
+                    } else {
+                        validStraight = false;
+                        break;
+                    }
+                }
+                
+                if (validStraight && straight.length >= 3) {
+                    const combo = analyzeCombo(straight.map(idx => hand[idx]));
+                    if (combo.valid && combo.type === 'straight') {
+                        possibleCombos.push({
+                            indices: straight,
+                            combo: combo,
+                            priority: 4 + straight.length // 긴 스트레이트일수록 높은 우선순위
+                        });
+                    }
+                }
+            }
+        }
+        
+        if (possibleCombos.length === 0) {
+            return [0]; // 최악의 경우 첫 번째 카드
+        }
+        
+        // 우선순위와 카드 강도를 고려하여 최적의 조합 선택
+        // 낮은 강도의 카드부터, 높은 우선순위 순으로 정렬
+        possibleCombos.sort((a, b) => {
+            // 우선순위가 높은 조합을 선호 (더 많은 카드를 한번에 낼 수 있는 조합)
+            if (a.priority !== b.priority) return b.priority - a.priority;
+            // 같은 우선순위면 낮은 강도의 카드를 선호
+            return a.combo.strength - b.combo.strength;
+        });
+        
+        return possibleCombos[0].indices;
+    }
+
+    // Render last play
+    function renderLastPlay() {
+        const lastPlayElement = document.getElementById('lastPlay');
+        const lastPlayerElement = document.getElementById('lastPlayer');
+        
+        if (gameState.lastPlay.length === 0) {
+            lastPlayElement.innerHTML = '<p style="color: #999;">아직 카드가 나오지 않았습니다</p>';
+            lastPlayerElement.textContent = 'by: -';
+            return;
+        }
+        
+        // Check if it's a pass - don't show in center area
+        if (gameState.lastPlay === 'PASS') {
+            // Keep showing the previous cards, don't clear the center
+            return;
+        }
+        
+        lastPlayElement.innerHTML = '';
+        gameState.lastPlay.forEach(card => {
+            const cardElement = document.createElement('div');
+            cardElement.className = `card ${card.suit === '♦' || card.suit === '♥' ? 'red' : 'black'}`;
+            cardElement.style.position = 'static';
+            cardElement.style.cursor = 'default';
+            
+            // 마지막 플레이도 같은 카드 디자인 사용
+            cardElement.innerHTML = `
+                <div class="card-value">${card.value}</div>
+                <div class="card-suit">${card.suit}</div>
+                <div class="card-value-bottom">${card.value}</div>
+            `;
+            lastPlayElement.appendChild(cardElement);
+        });
+        
+        const playerNames = ['AI 1', 'AI 2', 'AI 3', '나'];
+        lastPlayerElement.textContent = `by: ${playerNames[gameState.lastPlayer]}`;
+    }
+    
+    // 플레이 히스토리에 추가하는 함수
+    function addToPlayHistory(cards, playerIndex) {
+        const playerNames = ['AI 1', 'AI 2', 'AI 3', '나'];
+        const historyItem = {
+            cards: [...cards],
+            player: playerNames[playerIndex],
+            playerIndex: playerIndex
+        };
+        
+        // 최신 플레이를 맨 앞에 추가
+        gameState.playHistory.unshift(historyItem);
+        
+        // 최대 4개까지만 유지
+        if (gameState.playHistory.length > 4) {
+            gameState.playHistory = gameState.playHistory.slice(0, 4);
+        }
+        
+        renderPlayHistory();
+    }
+    
+    // 플레이 히스토리를 렌더링하는 함수
+    function renderPlayHistory() {
+        const container = document.getElementById('playHistoryContainer');
+        
+        if (gameState.playHistory.length === 0) {
+            container.innerHTML = '<p style="color: #999; text-align: center; font-size: 0.9rem;">아직 기록이 없습니다</p>';
+            return;
+        }
+        
+        container.innerHTML = '';
+        gameState.playHistory.forEach(item => {
+            const historyDiv = document.createElement('div');
+            historyDiv.className = 'history-item';
+            
+            const cardsDiv = document.createElement('div');
+            cardsDiv.className = 'history-cards';
+            
+            item.cards.forEach(card => {
+                const cardDiv = document.createElement('div');
+                cardDiv.className = `history-card ${card.suit === '♦' || card.suit === '♥' ? 'red' : 'black'}`;
+                cardDiv.innerHTML = `<div>${card.value}</div><div>${card.suit}</div>`;
+                cardsDiv.appendChild(cardDiv);
+            });
+            
+            const playerDiv = document.createElement('div');
+            playerDiv.className = 'history-player';
+            playerDiv.textContent = item.player;
+            
+            historyDiv.appendChild(cardsDiv);
+            historyDiv.appendChild(playerDiv);
+            container.appendChild(historyDiv);
+        });
+    }
+
+    // Show pass indicator
+    function showPassIndicator(playerName) {
+        const passIndicator = document.getElementById('passIndicator');
+        const passMessage = document.getElementById('passMessage');
+        
+        passMessage.textContent = `🚫 ${playerName} 패스`;
+        passIndicator.style.display = 'block';
+        
+        // Hide after animation completes
+        setTimeout(() => {
+            passIndicator.style.display = 'none';
+        }, 2000);
+    }
+
+    // Update active player indicator
+    function updateActivePlayer() {
+        document.querySelectorAll('.player').forEach((player, index) => {
+            player.classList.toggle('active', index === gameState.currentPlayer);
+        });
+        
+        // 플레이어 턴일 때 손패 영역 강조
+        const playerHand = document.querySelector('.player-hand');
+        if (playerHand) {
+            if (gameState.currentPlayer === 3) {
+                playerHand.classList.add('my-turn');
+            } else {
+                playerHand.classList.remove('my-turn');
+            }
+        }
+    }
+
+    // Update card counts
+    function updateCardCounts() {
+        document.getElementById('p1Cards').textContent = gameState.players[0].length;
+        document.getElementById('p2Cards').textContent = gameState.players[1].length;
+        document.getElementById('p3Cards').textContent = gameState.players[2].length;
+        document.getElementById('cardsLeft').textContent = gameState.players[3].length;
+    }
+
+    // Update game info
+    function updateGameInfo() {
+        const playerNames = ['AI 1', 'AI 2', 'AI 3', '나'];
+        document.getElementById('currentTurn').textContent = playerNames[gameState.currentPlayer];
+        document.getElementById('selectedCount').textContent = gameState.selectedCards.length;
+        
+        // 현재 필요한 카드 모양 표시
+        const suitRequirementDiv = document.getElementById('suitRequirement');
+        const requiredSuitSpan = document.getElementById('requiredSuit');
+        
+        if (gameState.lastPlaySuit && gameState.lastPlayCombo && gameState.lastPlayCombo.type === 'single') {
+            suitRequirementDiv.style.display = 'block';
+            requiredSuitSpan.textContent = gameState.lastPlaySuit + ' (또는 2)';
+            requiredSuitSpan.style.color = gameState.lastPlaySuit === '♥' || gameState.lastPlaySuit === '♦' ? '#ff4757' : '#2f3542';
+        } else {
+            suitRequirementDiv.style.display = 'none';
+        }
+        
+        updateCardCounts();
+    }
+
+    // Toggle rules panel
+    function toggleRules() {
+        const panel = document.getElementById('rulesPanel');
+        panel.classList.toggle('show');
+    }
+
+    // Show message dialog
+    function showMessage(text) {
+        document.getElementById('messageText').textContent = text;
+        document.getElementById('messageDialog').style.display = 'flex';
+    }
+    
+    // Show victory message with special effects
+    function showVictoryMessage(text, isPlayerWin = false) {
+        // 기존 다이얼로그 숨기기
+        document.getElementById('messageDialog').style.display = 'none';
+        
+        // 승리 다이얼로그 생성
+        const victoryDiv = document.createElement('div');
+        victoryDiv.className = 'victory-message';
+        victoryDiv.innerHTML = `
+            <div class="victory-fireworks">
+                <div class="firework" style="left: 10%; animation-delay: 0s;"></div>
+                <div class="firework" style="left: 30%; animation-delay: 0.5s;"></div>
+                <div class="firework" style="left: 50%; animation-delay: 1s;"></div>
+                <div class="firework" style="left: 70%; animation-delay: 1.5s;"></div>
+                <div class="firework" style="left: 90%; animation-delay: 2s;"></div>
+            </div>
+            <div class="victory-content">
+                <div class="victory-emoji">${isPlayerWin ? '🎉🏆🎉' : '🤖🏆🤖'}</div>
+                <div class="victory-title">${isPlayerWin ? '승리!' : 'AI 승리'}</div>
+                <div class="victory-subtitle">${text}</div>
+                <button class="btn primary" onclick="hideVictoryMessage()" style="
+    color: #fff;
+    background: #cccccc00;
+    margin-bottom: 1rem;
+    width: 50%;
+    border-radius: 0;
+    border: 1px solid;
+    ">확인</button>
+            </div>
+        `;
+        
+        document.body.appendChild(victoryDiv);
+        
+        // 애니메이션으로 나타나기
+        setTimeout(() => {
+            victoryDiv.style.display = 'flex';
+        }, 100);
+    }
+    
+    // Hide victory message
+    function hideVictoryMessage() {
+        const victoryDiv = document.querySelector('.victory-message');
+        if (victoryDiv) {
+            victoryDiv.remove();
+        }
+    }
+
+    // Hide message dialog
+    function hideMessage() {
+        document.getElementById('messageDialog').style.display = 'none';
+    }
+
+    // Start new game
+    function newGame() {
+        gameState = {
+            deck: [],
+            players: [[], [], [], []],
+            currentPlayer: 0,
+            lastPlay: [],
+            lastPlayer: -1,
+            selectedCards: [],
+            gameStarted: false,
+            passCount: 0,
+            playHistory: [],
+            isFirstRound: true
+        };
+        
+        // 바로 게임 시작
+        startGameCountdown();
+    }
+
+    // Game start countdown function (temporarily disabled)
+    async function startGameCountdown() {
+        const startScreen = document.getElementById('gameStartScreen');
+        const countdownScreen = document.getElementById('countdownScreen');
+        const gameBoard = document.getElementById('gameBoard');
+        const countdownText = document.getElementById('countdownText');
+        
+        // Hide start screen, show countdown
+        startScreen.style.display = 'none';
+        // countdownScreen.style.display = 'flex';
+        
+        // Countdown sequence - TEMPORARILY COMMENTED OUT
+        // const countdownSequence = ['Ready', '3', '2', '1', 'Start!'];
+        
+        // for (let i = 0; i < countdownSequence.length; i++) {
+        //     countdownText.textContent = countdownSequence[i];
+        //     countdownText.style.animation = 'none';
+        //     // Force reflow
+        //     countdownText.offsetHeight;
+        //     countdownText.style.animation = 'pulse 1s ease-in-out';
+        //     
+        //     if (i < countdownSequence.length - 1) {
+        //         await new Promise(resolve => setTimeout(resolve, 1000));
+        //     } else {
+        //         await new Promise(resolve => setTimeout(resolve, 800));
+        //     }
+        // }
+        
+        // Hide countdown, show game board immediately
+        countdownScreen.style.display = 'none';
+        gameBoard.style.display = 'flex';
+        
+        // Show game info
+        const gameInfo = document.querySelector('.game-info');
+        if (gameInfo) {
+            gameInfo.style.display = 'block';
+        }
+        
+        // Start the game
+        initGame();
+        
+        // 모바일 터치 지원 재적용
+        setTimeout(() => {
+            addMobileTouchSupport();
+        }, 100);
+        
+    }
+    
+    // Reset to start screen when starting new game
+    function resetToStartScreen() {
+        const startScreen = document.getElementById('gameStartScreen');
+        const countdownScreen = document.getElementById('countdownScreen');
+        const gameBoard = document.getElementById('gameBoard');
+        const gameInfo = document.querySelector('.game-info');
+        
+        gameBoard.style.display = 'none';
+        countdownScreen.style.display = 'none';
+        startScreen.style.display = 'flex';
+        
+        // Hide game info
+        if (gameInfo) {
+            gameInfo.style.display = 'none';
+        }
+    }
+
+    // Initialize game when page loads (just setup, don't start)
+    window.addEventListener('load', () => {
+        // Just show the start screen, don't start the game automatically
+        resetToStartScreen();
+        
+        // 모바일 터치 이벤트 개선
+        addMobileTouchSupport();
+    });
+    
+    // 모바일 터치 지원 개선
+    function addMobileTouchSupport() {
+        const playBtn = document.getElementById('playBtn');
+        const passBtn = document.getElementById('passBtn');
+        
+        // 터치 이벤트 추가
+        if (playBtn) {
+            playBtn.addEventListener('touchstart', function(e) {
+                if (!this.disabled) {
+                    e.preventDefault();
+                    this.style.transform = 'scale(0.98)';
+                    this.style.backgroundColor = '#45a049';
+                }
+            }, { passive: false });
+            
+            playBtn.addEventListener('touchend', function(e) {
+                if (!this.disabled) {
+                    e.preventDefault();
+                    this.style.transform = '';
+                    this.style.backgroundColor = '#4caf50';
+                    setTimeout(() => {
+                        this.blur();
+                        this.style.removeProperty('background-color');
+                    }, 200);
+                    playCards();
+                }
+            }, { passive: false });
+        }
+        
+        if (passBtn) {
+            passBtn.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                this.style.transform = 'scale(0.98)';
+            }, { passive: false });
+            
+            passBtn.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                this.style.transform = '';
+                passturn();
+            }, { passive: false });
+        }
+        
+        // 새 게임 버튼도 터치 지원
+        const newGameBtns = document.querySelectorAll('button[onclick="newGame()"]');
+        newGameBtns.forEach(btn => {
+            btn.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                this.style.transform = 'scale(0.98)';
+            }, { passive: false });
+            
+            btn.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                this.style.transform = '';
+                newGame();
+            }, { passive: false });
+        });
+    }
+</script>
+
+</body>
+</html>

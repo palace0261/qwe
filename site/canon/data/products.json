@@ -1,0 +1,277 @@
+[
+ {
+  "slug": "cr-n100",
+  "name": "CR-N100",
+  "cat": "camera",
+  "source": "https://kr.canon/product/content/detail/A5180ADEAA90B9AB4B460E637A64B0B9?productNm=CR-N100",
+  "gallery": [
+   "products/cr-n100/g1.jpg",
+   "products/cr-n100/g2.jpg",
+   "products/cr-n100/g3.jpg",
+   "products/cr-n100/g4.jpg"
+  ],
+  "detail": [
+   "products/cr-n100/d1.jpg",
+   "products/cr-n100/d2.jpg",
+   "products/cr-n100/d3.jpg"
+  ],
+  "spec": [
+   "<table><caption>SYSTEM</caption><tbody><tr><th colspan=\"2\">센서</th><td>1/2.3\" CMOS<br>유효화소수 : 약 829만화소 (3840 &times; 2160)</td></tr><tr><th colspan=\"2\">렌즈</th><td>초점거리 : 3.67~73.4mm / 광학 20배 줌 / F1.8~2.8 / 8매 조리개<br>[35mm 환산 시]<br>- 4K UHD : 약 29.3mm~601mm<br>- Full HD : 약 30.5mm~627mm</td></tr><tr><th colspan=\"2\">디지털 줌</th><td>20배</td></tr><tr><th colspan=\"2\">최단촬영거리</th><td>와이드 1cm, 줌 전역 60cm</td></tr><tr><th colspan=\"2\">셔터 스피드</th><td>1/6 ～ 1/2000초 (프레임주파수에 따름)</td></tr><tr><th colspan=\"2\">게인</th><td>0.0 dB ～ 36.0 dB</td></tr><tr><th colspan=\"2\">ND필터</th><td>내장 (최대 1/8, 그라데이션 ND) / 전동식</td></tr><tr><th colspan=\"2\">화이트밸런스</th><td>Auto (AWB), Set A, Set B, 프리셋 설정 (태양광 약 5600K, 전구 약 3200K), 색온도설정 (2000K ～ 15000K), 매뉴얼</td></tr><tr><th colspan=\"2\">포커스</th><td>조정방법 : 매뉴얼, 컨티뉴어스 AF, 얼굴검출 AF, 추적<br>AF방식 : 하이브리드 AF, 콘트라스트 AF</td></tr><tr><th colspan=\"2\">감마</th><td>Normal1 (Standard), Normal3 (BT.709)</td></tr><tr><th colspan=\"2\">IS (Image Stabilizer)</th><td>광학식</td></tr><tr><th colspan=\"2\">최저피사체조도</th><td>약 1.5 lux (셔터속도 1/30초, 프레임주파수 59.94Hz (P (프로그램AE) 모드), 오토 슬로우셔터 On 시)</td></tr><tr><th colspan=\"2\">Pan Tilt 기능</th><td>Pan 동작범위 : 수평 &plusmn;170&deg; (Pan 동작속도 : 0.2&deg; ～ 300&deg; / 초)<br>Tilt 동작범위 : 수직 -30&deg; ～ +100&deg; (Tilt 동작속도 : 0.2&deg; ～ 180&deg; / 초)</td></tr><tr><th>영상출력 포맷</th><th>HDMI</th><td>3840 x 2160: 29.97P, 25.00P, 23.98P (4:2:2 10 bit)<br>1920 x 1080: 59.94P/59.94i, 50.00P/50.00i/25.00P, 29.97P/23.98P (4:2:2 10 bit)<br>1280 x 720: 59.94P, 50.00P (4:2:2 10 bit)</td></tr><tr><th>영상출력 포맷</th><th>IP</th><td>3840 x 2160: 29.97 fps, 14.99 fps, 5.00 fps (4:2:0 8 bit)<br>1920 x 1080: 59.94 fps, 29.97 fps, 14.99 fps, 5.00 fps (4:2:0 8 bit)<br>1280 x 720: 59.94 fps, 29.97 fps, 14.99 fps, 5.00 fps (4:2:0 8 bit)<br>640 x 360: 59.94 fps, 29.97 fps, 14.99 fps, 5.00 fps (4:2:0 8 bit)<br>- 프레임주파수 59.94/50.00Hz를 선택한 경우, 3840 &times; 2160 포맷을 선택할 수 없습니다.<br>- 프레임주파수를 초과하는 프레임레이트를 선택할 수 없습니다.<br>- JPEG은 프레임주파수에 따라 1패턴 고정 (포맷은 선택할 수 없습니다.)<br>해상도 : 1280 &times; 720<br>프레임주파수 59.94/50.00 Hz 선택 시 : 14.99 fps, 프레임주파수 23.98 Hz 선택 시 : 11.99 fps,<br>프레임주파수 29.97/25.00 Hz 선택 시 : 12.50 fps</td></tr><tr><th>영상출력 포맷</th><th>USB</th><td>■Motion JPEG :<br>〇1920 &times; 1080<br>59.94 Hz : 30.00 fps、15.00 fps、5.00 fps<br>50.00 Hz : 12.50 fps、5.00 fps<br>〇1280 &times; 720<br>59.94 Hz : 30.00 fps、15.00 fps、5.00 fps<br>50.00 Hz : 25.00 fps、12.50 fps、5.00 fps<br>〇640 &times; 360<br>59.94 Hz : 30.00 fps、15.00 fps、5.00 fps<br>50.00 Hz : 25.00 fps、12.50 fps、5.00 fps<br>■YUV<br>〇640 &times; 360<br>59.94 Hz : 30.00 fps、15.00 fps、5.00 fps<br>50.00 Hz : 25.00 fps、12.50 fps、5.00 fps</td></tr><tr><th colspan=\"2\">프로토콜</th><td>XC프로토콜 (캐논 독자), RTP/RTSP, RTMP/RTMPS, NDI|HX*, SRT<br>※NDI는 NewTek, Inc.의 영국 및 기타 국가에 있어서의 상표 또는 등록상표입니다.</td></tr><tr><th colspan=\"2\">프리셋</th><td>등록수 : 최대 100 (홈 포지션 포함)</td></tr></tbody></table>",
+   "<table><caption>인터페이스</caption><tbody><tr><th colspan=\"2\">컨트롤</th><td>LAN, Serial, IR, USB</td></tr><tr><th colspan=\"2\">네트워크</th><td>LAN x 1, RJ45, 1000Base-T</td></tr><tr><th colspan=\"2\">HDMI OUT 단자</th><td>HDMI 커넥터 &times; 1, output only</td></tr><tr><th colspan=\"2\">RS-422 단자</th><td>RJ45 커넥터 &times; 1</td></tr><tr><th colspan=\"2\">MIC 단자</th><td>3.5 mm stereo mini jack (unbalanced, plug-in power supported)<br>감도 (MIC 시) : -72 dBV (매뉴얼 볼륨 센터, 풀 스케일 -18 dB) / 1k&Omega; 이상 / Att. : 20 dB<br>감도 (LINE 시) : -10 dBV (매뉴얼 볼륨 센터, 풀 스케일 -18 dB) / 1k&Omega; 이상<br>공급 전압 : DC2.4 V (Bias 저항 2.2 k&Omega;)</td></tr><tr><th colspan=\"2\">USB 단자</th><td>Type-C (USB 3.0)</td></tr></tbody></table>",
+   "<table><caption>전원・기타</caption><tbody><tr><th colspan=\"2\">동작 환경</th><td>온도 : 0&deg;C ～ +40&deg;C<br>습도 : 10% ～ 90%</td></tr><tr><th colspan=\"2\">전원</th><td>PoE 기능 : LAN 커넥터에 의한 PoE+ 전원공급 대응 (IEEE802.3at 규격 준거) - PoE 사용 불가<br>외부전원 : DC 24 V 에 대응 (동봉 AC어댑터 사용)</td></tr><tr><th colspan=\"2\">소비전력</th><td>PoE+입력 : 최대 약 13.9 W* (body only)<br>DC입력 : 최대 약 13.3 W (body only)<br>* 전원공급장치 Class 4 (25.5 W required)</td></tr><tr><th colspan=\"2\">크기 (W × H × D)</th><td>약 154 &times; 178 &times; 164 mm (돌출부 미포함)</td></tr><tr><th colspan=\"2\">무게</th><td>약 2.2 kg (body only)</td></tr></tbody></table>"
+  ],
+  "info": []
+ },
+ {
+  "slug": "cr-n300",
+  "name": "CR-N300",
+  "cat": "camera",
+  "source": "https://kr.canon/product/content/detail/CD933FD8C394B04A0D63B34E0704CCC5?productNm=CR-N300",
+  "gallery": [
+   "products/cr-n300/g1.jpg",
+   "products/cr-n300/g2.jpg",
+   "products/cr-n300/g3.jpg",
+   "products/cr-n300/g4.jpg",
+   "products/cr-n300/g5.jpg",
+   "products/cr-n300/g6.jpg"
+  ],
+  "detail": [
+   "products/cr-n300/d1.jpg",
+   "products/cr-n300/d2.jpg",
+   "products/cr-n300/d3.jpg"
+  ],
+  "spec": [
+   "<table><caption>SYSTEM</caption><tbody><tr><th colspan=\"2\">센서</th><td>1/2.3\" CMOS<br>유효화소수 : 약 829만화소 (3840 &times; 2160)</td></tr></tbody></table>",
+   "<table><caption>인터페이스</caption><tbody><tr><th colspan=\"2\">컨트롤</th><td>LAN, Wi-Fi, Serial, IR, USB</td></tr><tr><th colspan=\"2\">네트워크</th><td>LAN x 1, RJ45, 1000Base-T</td></tr><tr><th colspan=\"2\">3G-SDI OUT 단자</th><td>BNC jack (output only) x 1,<br>SMPTE 424, SMPTE 425, SMPTE ST 299-2 준거<br>Embedded audio, Time code (VITC/LTC)</td></tr><tr><th colspan=\"2\">HDMI OUT 단자</th><td>HDMI 커넥터 &times; 1, output only</td></tr><tr><th colspan=\"2\">RS-422 단자</th><td>RJ45 커넥터 &times; 1</td></tr><tr><th colspan=\"2\">MIC 단자</th><td>3.5 mm stereo mini jack (unbalanced, plug-in power supported)<br>감도 (MIC 시) : -72 dBV (매뉴얼 볼륨 센터, 풀 스케일 -18 dB) / 1k&Omega; 이상 / Att. : 20 dB<br>감도 (LINE 시) : -10 dBV (매뉴얼 볼륨 센터, 풀 스케일 -18 dB) / 1k&Omega; 이상<br>공급 전압 : DC2.4 V (Bias 저항 2.2 k&Omega;)</td></tr><tr><th colspan=\"2\">USB 단자</th><td>Type-C (USB 3.0)</td></tr></tbody></table>",
+   "<table><caption> 전원・기타</caption><tbody><tr><th colspan=\"2\">동작 환경</th><td>온도 : 0&deg;C ～ +40&deg;C<br>습도 : 10% ～ 90%</td></tr></tbody></table>"
+  ],
+  "info": []
+ },
+ {
+  "slug": "cr-n350",
+  "name": "CR-N350",
+  "cat": "camera",
+  "source": "https://kr.canon/product/content/detail/AA4277127A03FA6F34DFB0EDD6F3C924",
+  "gallery": [
+   "products/cr-n350/g1.jpg",
+   "products/cr-n350/g2.jpg",
+   "products/cr-n350/g3.jpg",
+   "products/cr-n350/g4.jpg",
+   "products/cr-n350/g5.jpg",
+   "products/cr-n350/g6.jpg"
+  ],
+  "detail": [
+   "products/cr-n350/d1.jpg"
+  ],
+  "spec": [
+   "<h4>SYSTEM</h4>",
+   "<table><tbody><tr><td colspan=\"2\">센서</td><td colspan=\"2\">1/2.3\" CMOS센서・최대유효화소 약 829만화소</td></tr><tr><td colspan=\"2\">렌즈</td><td colspan=\"2\">초점거리 : 3.67~73.4mm / 광학 20배 줌 / F1.8~2.8 / 8매 조리개<br> [35mm 환산 시]<br> - 59.94/50.00 Hz 시 약 30.0~616mm<br> - 29.97/25.00/23.98 Hz 시 약 29.3~601mm</td></tr><tr><td colspan=\"2\">디지털 줌</td><td colspan=\"2\">20배</td></tr><tr><td colspan=\"2\">어드밴스드 줌</td><td colspan=\"2\">40배 (Full-HD)</td></tr><tr><td colspan=\"2\">최단촬영거리</td><td colspan=\"2\">와이드 1cm, 줌 전역 60cm</td></tr><tr><td colspan=\"2\">셔터 스피드</td><td colspan=\"2\">1/24 ～ 1/2000초 (프레임주파수에 따름)</td></tr><tr><td colspan=\"2\">게인</td><td colspan=\"2\">0.0 dB ～ 30.0 dB, 36dB* (*게인 부스트 사용 시)</td></tr><tr><td colspan=\"2\">ND필터</td><td colspan=\"2\">최대 1/8, 아이리스 연동</td></tr><tr><td colspan=\"2\">화이트밸런스</td><td colspan=\"2\">Auto (AWB), Set A, Set B, 프리셋 설정 (태양광 약 5600K, 전구 약 3200K), 색온도설정 (2000K ～ 15000K), 매뉴얼</td></tr><tr><td colspan=\"2\">포커스</td><td colspan=\"2\">조정방법 : 매뉴얼, 컨티뉴어스 AF, 얼굴검출 AF, 추적<br> AF방식 : 하이브리드 AF, 콘트라스트 AF</td></tr><tr><td colspan=\"2\">감마</td><td colspan=\"2\">BT.709 Wide DR, BT.709 Standard, Canon Log 3, Canon 709, PQ</td></tr><tr><td colspan=\"2\">IS (Image Stabilizer)</td><td colspan=\"2\">광학식</td></tr><tr><td colspan=\"2\">최저피사체조도</td><td colspan=\"2\">약 1.5 lux (셔터속도 1/30초, 프레임주파수 59.94Hz, 게인 30.0 dB 시)</td></tr><tr><td colspan=\"2\">Pan Tilt 기능</td><td colspan=\"2\">Pan 동작범위 : 수평 ±170° (Pan 동작속도 : 0.1° ～ 100° / 초)<br> Tilt 동작범위 : 수직 -30° ～ +100° (Tilt 동작속도 : 0.1° ～ 100° / 초)</td></tr><tr><td colspan=\"2\">영상출력 I/F</td><td colspan=\"2\">3G-SDI, HDMI, IP, USB</td></tr><tr><td rowspan=\"4\">영상출력 포맷</td><td>SDI</td><td colspan=\"2\">Full-HD 59.94p (4:2:2 10bit)</td></tr><tr><td>HDMI</td><td colspan=\"2\">4K 59.94p (4:2:2 10bit)</td></tr><tr><td>IP</td><td colspan=\"2\">4K 59.94p (4:2:0 8bit)</td></tr><tr><td>USB</td><td colspan=\"2\">Full-HD 30p</td></tr><tr><td colspan=\"2\">프로토콜</td><td colspan=\"2\">NDI|HX2 / RTP(RTSP) / RTMP(S) / SRT</td></tr><tr><td colspan=\"2\">프리셋</td><td colspan=\"2\">등록수 : 최대 100 (홈 포지션 포함)</td></tr></tbody></table>",
+   "<h4>인터페이스</h4>",
+   "<table><tbody><tr><td>컨트롤</td><td>LAN, Wi-Fi, Serial, IR</td></tr><tr><td>네트워크</td><td>LAN x 1, RJ45, 1000Base-T</td></tr><tr><td>3G-SDI OUT 단자</td><td>BNC jack (output only) x 1, 0.8 Vp-p/75 Ω,<br> SMPTE ST 2082, 2081, 424, 425, 292, 259, 299, 272 compliant<br> Embedded audio, Time code (VITC/LTC)</td></tr><tr><td>HDMI OUT 단자</td><td>HDMI 커넥터 × 1, output only</td></tr><tr><td>RS-422 단자</td><td>RJ45 커넥터 × 1</td></tr><tr><td>MIC 단자</td><td>3.5 mm stereo mini jack (unbalanced, plug-in power supported)<br> 감도 (MIC 시) : -72 dBV (매뉴얼 볼륨 센터, 풀 스케일 -18 dB) / 1kΩ 이상 / Att. : 20 dB<br> 감도 (LINE 시) : -10 dBV (매뉴얼 볼륨 센터, 풀 스케일 -18 dB) / 1kΩ 이상<br> 공급 전압 : DC2.4 V (Bias 저항 2.2 kΩ)</td></tr><tr><td>USB 단자</td><td>Type-C (USB 3.0)</td></tr></tbody></table>",
+   "<h4>전원・기타</h4>",
+   "<table><tbody><tr><td>전원</td><td>PoE 기능 : LAN 커넥터에 의한 PoE++ 전원공급 대응 (IEEE802.3bt 규격 준거)<br> DC입력 : DC IN 12 V 단자</td></tr><tr><td>소비전력</td><td>PoE+입력 : 최대 약 26.1 W* (body only)<br> DC입력 : 최대 약 23.6 W (body only)<br> * 전원공급장치 Class 5 (40.0 W required)</td></tr><tr><td>크기 (W × H × D)</td><td>약 176 × 220 × 194 mm (돌출부 미포함)</td></tr><tr><td>무게</td><td>약 3.0 kg (body only)</td></tr></tbody></table>"
+  ],
+  "info": []
+ },
+ {
+  "slug": "cr-n400",
+  "name": "CR-N400",
+  "cat": "camera",
+  "source": "https://kr.canon/product/content/detail/52F34BF406F4DAD7A7997E9F8FEE5CB1?productNm=CR-N400",
+  "gallery": [
+   "products/cr-n400/g1.jpg",
+   "products/cr-n400/g2.jpg",
+   "products/cr-n400/g3.jpg",
+   "products/cr-n400/g4.jpg",
+   "products/cr-n400/g5.jpg",
+   "products/cr-n400/g6.jpg"
+  ],
+  "detail": [
+   "products/cr-n400/d1.jpg"
+  ],
+  "spec": [
+   "<h4>SYSTEM</h4>",
+   "<table><tbody><tr><th colspan=\"2\"><span>센서</span></th><td colspan=\"2\">1/2.3\" CMOS센서・최대유효화소 약 829만화소</td></tr><tr><td colspan=\"2\">렌즈</td><td colspan=\"2\">초점거리 : 3.67~73.4mm / 광학 20배 줌 / F1.8~2.8 / 8매 조리개<br> [35mm 환산 시]<br> - 59.94/50.00 Hz 시 약 30.0~616mm<br> - 29.97/25.00/23.98 Hz 시 약 29.3~601mm</td></tr><tr><td colspan=\"2\">디지털 줌</td><td colspan=\"2\">20배</td></tr><tr><td colspan=\"2\">어드밴스드 줌</td><td colspan=\"2\">40배 (Full-HD)</td></tr><tr><td colspan=\"2\">최단촬영거리</td><td colspan=\"2\">와이드 1cm, 줌 전역 60cm</td></tr><tr><td colspan=\"2\">셔터 스피드</td><td colspan=\"2\">1/24 ～ 1/2000초 (프레임주파수에 따름)</td></tr><tr><td colspan=\"2\">게인</td><td colspan=\"2\">0.0 dB ～ 30.0 dB, 36dB* (*게인 부스트 사용 시)</td></tr><tr><td colspan=\"2\">ND필터</td><td colspan=\"2\">최대 1/8, 아이리스 연동</td></tr><tr><td colspan=\"2\">화이트밸런스</td><td colspan=\"2\">Auto (AWB), Set A, Set B, 프리셋 설정 (태양광 약 5600K, 전구 약 3200K), 색온도설정 (2000K ～ 15000K), 매뉴얼</td></tr><tr><td colspan=\"2\">포커스</td><td colspan=\"2\">조정방법 : 매뉴얼, 컨티뉴어스 AF, 얼굴검출 AF, 추적<br> AF방식 : 하이브리드 AF, 콘트라스트 AF</td></tr><tr><td colspan=\"2\">감마</td><td colspan=\"2\">BT.709 Wide DR, BT.709 Standard, Canon Log 3, Canon 709, PQ</td></tr><tr><td colspan=\"2\">IS (Image Stabilizer)</td><td colspan=\"2\">광학식</td></tr><tr><td colspan=\"2\">최저피사체조도</td><td colspan=\"2\">약 1.5 lux (셔터속도 1/30초, 프레임주파수 59.94Hz, 게인 30.0 dB 시)</td></tr><tr><td colspan=\"2\">Pan Tilt 기능</td><td colspan=\"2\">Pan 동작범위 : 수평 ±170° (Pan 동작속도 : 0.1° ～ 100° / 초)<br> Tilt 동작범위 : 수직 -30° ～ +100° (Tilt 동작속도 : 0.1° ～ 100° / 초)</td></tr><tr><td colspan=\"2\">영상출력 I/F</td><td colspan=\"2\">12G-SDI, 3G-SDI, HDMI, IP, USB</td></tr><tr><td rowspan=\"4\">영상출력 포맷</td><td>SDI</td><td colspan=\"2\">4K 59.94p (4:2:2 10 bit)</td></tr><tr><td>HDMI</td><td colspan=\"2\">4K 59.94p (4:2:2 10bit)</td></tr><tr><td>IP</td><td colspan=\"2\">4K 59.94p (4:2:0 8bit)</td></tr><tr><td>USB</td><td colspan=\"2\">Full-HD 30p</td></tr><tr><td colspan=\"2\">프로토콜</td><td colspan=\"2\">NDI|HX2 / RTP(RTSP) / RTMP(S) / SRT</td></tr><tr><td colspan=\"2\">프리셋</td><td colspan=\"2\">등록수 : 최대 100 (홈 포지션 포함)</td></tr></tbody></table>",
+   "<h4>인터페이스</h4>",
+   "<table><tbody><tr><td>컨트롤</td><td>LAN, Wi-Fi, Serial, IR</td></tr><tr><td>네트워크</td><td>LAN x 1, RJ45, 1000Base-T</td></tr><tr><td>12G-SDI OUT 단자</td><td>BNC jack (output only) x 1, 0.8 Vp-p/75 Ω,<br> SMPTE ST 2082, 2081, 424, 425, 292, 259, 299, 272 compliant<br> Embedded audio, Time code (VITC/LTC)</td></tr><tr><td>3G-SDI OUT 단자</td><td>BNC jack (output only) x 1, 0.8 Vp-p/75 Ω,<br> SMPTE ST 2082, 2081, 424, 425, 292, 259, 299, 272 compliant<br> Embedded audio, Time code (VITC/LTC)</td></tr><tr><td>HDMI OUT 단자</td><td>HDMI 커넥터 × 1, output only</td></tr><tr><td>RS-422 단자</td><td>RJ45 커넥터 × 1</td></tr><tr><td>GEN-LOCK 단자</td><td>BNC jack x 1, 1.0 Vp-p/75 Ω (SYNC OUT 단자 겸용)</td></tr><tr><td>INPUT 1 단자<br> INPUT 2 단자</td><td>XLR 3-pin jack (balanced) ((1) shield, (2) hot, (3) cold), two lines<br> 감도 (MIC): -60 dBu (매뉴얼 볼륨 센터, 풀 스케일 -18 dB)<br> 감도 (LINE): +4 dBu (매뉴얼 볼륨 센터, 풀 스케일 -18 dB)<br> 공급 전압 : 48 V DC (Bias 저항 : 6.8 kΩ)</td></tr><tr><td>MIC 단자</td><td>3.5 mm stereo mini jack (unbalanced, plug-in power supported)<br> 감도 (MIC 시) : -72 dBV (매뉴얼 볼륨 센터, 풀 스케일 -18 dB) / 1kΩ 이상 / Att. : 20 dB<br> 감도 (LINE 시) : -10 dBV (매뉴얼 볼륨 센터, 풀 스케일 -18 dB) / 1kΩ 이상<br> 공급 전압 : DC2.4 V (Bias 저항 2.2 kΩ)</td></tr><tr><td>USB 단자</td><td>Type-C (USB 3.0)</td></tr></tbody></table>",
+   "<h4>전원・기타</h4>",
+   "<table><tbody><tr><td>동작 환경</td><td>온도 : 0°C ～ +40°C<br> 습도 : 10% ～ 90%</td></tr><tr><td>전원</td><td>PoE 기능 : LAN 커넥터에 의한 PoE++ 전원공급 대응 (IEEE802.3bt 규격 준거)<br> DC입력 : DC IN 12 V 단자</td></tr><tr><td>소비전력</td><td>PoE+입력 : 최대 약 34.4 W* (body only)<br> DC입력 : 최대 약 33.8 W (body only)<br> * 전원공급장치 Class 5 (40.0 W required)</td></tr><tr><td>크기 (W × H × D)</td><td>약 176 × 220 × 194 mm (돌출부 미포함)</td></tr><tr><td>무게</td><td>약 3.1 kg (body only)</td></tr></tbody></table>"
+  ],
+  "info": []
+ },
+ {
+  "slug": "cr-n500",
+  "name": "CR-N500",
+  "cat": "camera",
+  "source": "https://kr.canon/product/content/detail/989617E9D356F6B9A352849B694BD382?productNm=CR-N500",
+  "gallery": [
+   "products/cr-n500/g1.jpg",
+   "products/cr-n500/g2.jpg",
+   "products/cr-n500/g3.jpg",
+   "products/cr-n500/g4.jpg",
+   "products/cr-n500/g5.jpg"
+  ],
+  "detail": [
+   "products/cr-n500/d1.jpg",
+   "products/cr-n500/d2.jpg",
+   "products/cr-n500/d3.jpg"
+  ],
+  "spec": [
+   "<table><caption>SYSTEM</caption><tbody><tr><th colspan=\"2\">센서</th><td>1.0\" CMOS<br>유효화소수 : 약 829만화소 (3840 &times; 2160)</td></tr></tbody></table>",
+   "<table><caption>인터페이스</caption><tbody><tr><th colspan=\"2\">컨트롤</th><td>LAN, Wi-Fi, Serial, IR</td></tr></tbody></table>",
+   "<table><caption>전원・기타</caption><tbody><tr><th colspan=\"2\">동작 환경</th><td>온도 : 0&deg;C ～ +40&deg;C<br>습도 : 10% ～ 90%</td></tr></tbody></table>"
+  ],
+  "info": []
+ },
+ {
+  "slug": "cr-n700",
+  "name": "CR-N700",
+  "cat": "camera",
+  "source": "https://kr.canon/product/content/detail/8553AD1392DC85CE106F619E4F17B2DA",
+  "gallery": [
+   "products/cr-n700/g1.jpg",
+   "products/cr-n700/g2.jpg",
+   "products/cr-n700/g3.jpg",
+   "products/cr-n700/g4.jpg"
+  ],
+  "detail": [
+   "products/cr-n700/d1.jpg",
+   "products/cr-n700/d2.jpg",
+   "products/cr-n700/d3.jpg"
+  ],
+  "spec": [
+   "<table><caption>SYSTEM</caption><tbody><tr><th colspan=\"2\">센서</th><td>1.0\" CMOS유효화소수 : 약 829만화소 (3840 &times; 2160)</td></tr><tr><th colspan=\"2\">렌즈</th><td>광학 15배 줌 / F2.8~4.5 / 9매 조리개초점거리 : 8.2~124.5mm (35mm 환산 시 : 약 25.5mm~382.5mm)</td></tr><tr><th colspan=\"2\">디지털 줌</th><td>20배</td></tr><tr><th colspan=\"2\">어드밴스드 줌</th><td>30배</td></tr><tr><th colspan=\"2\">화각</th><td>수평화각 : 73.0&deg;～5.7&deg;, 수직화각 : 45.2&deg;～3.2&deg;</td></tr><tr><th colspan=\"2\">셔터 스피드</th><td>1/3 ～ 1/2000초 (프레임주파수에 따름)</td></tr><tr><th colspan=\"2\">게인</th><td>-6.0 dB ～ 21.0 dB, 36dB* (*게인 부스트 사용 시)</td></tr><tr><th colspan=\"2\">ND필터</th><td>내장 (OFF, 1/4, 1/16, 1/64) / 전동식</td></tr><tr><th colspan=\"2\">화이트밸런스</th><td>Auto (AWB), Set A, Set B, 프리셋 설정 (태양광 약 5600K, 전구 약 3200K), 색온도설정 (2000K ～ 15000K), 매뉴얼</td></tr><tr><th colspan=\"2\">포커스</th><td>조정방법 : 매뉴얼, AF 부스트MF, 컨티뉴어스 AF, 얼굴검출 AF, 추적AF방식 : Dual Pixel CMOS AF, 콘트라스트 AF</td></tr><tr><th colspan=\"2\">감마</th><td>BT.709 Normal, BT.709 Wide DR, BT.709 Standard, Canon Log 3, PQ, HLG</td></tr><tr><th colspan=\"2\">IS (Image Stabilizer)</th><td>광학식</td></tr><tr><th colspan=\"2\">최저피사체조도</th><td>약 3 lux (셔터속도 1/60초, 프레임레이트 59.94P, Gain 21.0 dB)</td></tr><tr><th colspan=\"2\">Pan Tilt 기능</th><td>Pan 동작범위 : 수평 &plusmn;170&deg; (Pan 동작속도 : 0.1&deg; ～ 100&deg; / 초)Tilt 동작범위 : 수직 -30&deg; ～ +90&deg; (Tilt 동작속도 : 0.1&deg; ～ 100&deg; / 초)</td></tr><tr><th>영상출력 포맷</th><th>SDI</th><td>[12G-SDI]<br>3840 x 2160:<br>59.94P/29.97P/23.98P/50.00P/25.00P (4:2:2 10 bit)<br>1920 x 1080: 59.94P/59.94i/29.97P/29.97PsF/23.98P/50.00P/50.00i/25.00P/25.00PsF (4:2:2 10 bit)<br>1280 x 720: 59.94P/50.00P (4:2:2 10 bit)<br>720 x 576: 59.94i/50.00i (4:2:2 10 bit)<br><br>[3G-SDI]<br>1920 x 1080: 59.94P/59.94i/29.97P/23.98P/50.00P/50.00i/25.00P (4:2:2 10 bit)<br>1280 x 720: 59.94P/50.00P (4:2:2 10 bit)<br>720 x 576: 59.94i/50.00i (4:2:2 10 bit)</td></tr><tr><th>영상출력 포맷</th><th>HDMI</th><td>3840 x 2160:<br>59.94P/29.97P/23.98P/50.00P/25.00P (4:2:2 10 bit)<br>1920 x 1080: 59.94P/59.94i/29.97P/23.98P/50.00P/50.00i/25.00P (4:2:2 10 bit)<br>1280 x 720: 59.94P/50.00P (4:2:2 10 bit)<br>720 x 576: 59.94i/50.00i (4:2:2 10 bit)</td></tr><tr><th>영상출력 포맷</th><th>IP</th><td>[Frame frequency 59.94 Hz]<br>3840 x 2160, 1920 x 1080, 1280 x 720, 640 x 360:<br>59.94 fps, 29.97 fps, 14.99 fps, 5.00 fps (4:2:0 8 bit)<br>[Frame frequency 29.97 Hz]<br>3840 x 2160, 1920 x 1080, 1280 x 720, 640 x 360:<br>29.97 fps, 14.99 fps, 5.00 fps (4:2:0 8 bit)<br>[Frame frequency 50.00 Hz]<br>3840 x 2160, 1920 x 1080, 1280 x 720, 640 x 360:<br>50.00 fps, 25.00 fps, 12.50 fps, 5.00 fps (4:2:0 8 bit)<br>[Frame frequency 25.00 Hz]<br>3840 x 2160, 1920 x 1080, 1280 x 720, 640 x 360:<br>25.00 fps, 12.50 fps, 5.00 fps (4:2:0 8 bit)<br>[Frame frequency 23.98 Hz]<br>3840 x 2160, 1920 x 1080, 1280 x 720, 640 x 360:<br>23.98 fps, 11.99 fps, 5.99 fps (4:2:0 8 bit)<br>*59.94 fps/50.00 fps is only when H.265.<br>&ndash; JPEG은 프레임주파수에 따라 1패턴 고정 (포맷은 선택할 수 없습니다.)<br>Resolution: 1280 x 720<br>59.94/29.97 Hz: 14.99 fps,<br>50.00/25.00 Hz: 12.50 fps,<br>23.98 Hz: 11.99 fps</td></tr><tr><th colspan=\"2\">프로토콜</th><td>XC프로토콜 (캐논 독자), RTP/RTSP, RTMP/RTMPS, NDI|HX*, SRT<br>※NDI는 NewTek, Inc.의 영국 및 기타 국가에 있어서의 상표 또는 등록상표입니다.</td></tr><tr><th colspan=\"2\">프리셋</th><td>등록수 : 최대 100 (홈 포지션 포함)</td></tr></tbody></table>",
+   "<table><caption>인터페이스</caption><tbody><tr><th colspan=\"2\">컨트롤</th><td>LAN, Wi-Fi, Serial, IR</td></tr><tr><th colspan=\"2\">네트워크</th><td>LAN x 1, RJ45, 1000Base-T</td></tr><tr><th colspan=\"2\">12G-SDI OUT 단자</th><td>BNC jack (output only) x 1, 0.8 Vp-p/75 &Omega;,<br>SMPTE ST 2082, 2081, 424, 425, 292, 259, 299, 272 compliant<br>Embedded audio, Time code (VITC/LTC)</td></tr><tr><th colspan=\"2\">3G-SDI OUT 단자</th><td>BNC jack (output only) x 1, 0.8 Vp-p/75 &Omega;,<br>SMPTE ST 424, 425, 292, 259, 299, 272 compliant<br>Embedded audio, Time code (VITC/LTC)</td></tr><tr><th colspan=\"2\">GEN-LOCK 단자</th><td>BNC jack x 1, 1.0 Vp-p/75 &Omega; (SYNC OUT 단자 겸용)</td></tr><tr><th colspan=\"2\">HDMI OUT 단자</th><td>HDMI 커넥터 &times; 1, output only</td></tr><tr><th colspan=\"2\">RS-422 단자</th><td>RJ45 커넥터 &times; 1</td></tr><tr><th colspan=\"2\">INPUT 1 단자 / INPUT 2 단자</th><td>XLR 3-pin jack (balanced) ((1) shield, (2) hot, (3) cold), two lines<br>감도 (MIC): -60 dBu (매뉴얼 볼륨 센터, 풀 스케일 -18 dB)<br>감도 (LINE): +4 dBu (매뉴얼 볼륨 센터, 풀 스케일 -18 dB)<br>공급 전압 : 48 V DC (Bias 저항 : 6.8 k&Omega;)</td></tr><tr><th colspan=\"2\">MIC 단자</th><td>3.5 mm stereo mini jack (unbalanced, plug-in power supported)<br>감도 (MIC 시) : -72 dBu (매뉴얼 볼륨 센터, 풀 스케일 -18 dB) / 1k&Omega; 이상<br>감도 (LINE 시) : -10 dBV (매뉴얼 볼륨 센터, 풀 스케일 -18 dB) / 1k&Omega; 이상<br>공급 전압 : DC2.4 V (Bias 저항 2.2 k&Omega;)</td></tr></tbody></table>",
+   "<table><caption>전원・기타</caption><tbody><tr><th colspan=\"2\">동작 환경</th><td>온도 : 0&deg;C ～ +40&deg;C습도 : 10% ～ 90%</td></tr></tbody></table>"
+  ],
+  "info": []
+ },
+ {
+  "slug": "rc-ip100",
+  "name": "RC-IP100",
+  "cat": "controller",
+  "source": "https://kr.canon/product/content/detail/DB7914BF25C05F79FE284CB6E991DA85?productNm=RC-IP100",
+  "gallery": [
+   "products/rc-ip100/g1.jpg",
+   "products/rc-ip100/g2.jpg",
+   "products/rc-ip100/g3.jpg"
+  ],
+  "detail": [
+   "products/rc-ip100/d1.jpg"
+  ],
+  "spec": [
+   "<table><caption>일반</caption><tbody><tr><th colspan=\"2\">동작 환경</th><td>온도 : 0&deg;C ～ +40&deg;C</td></tr><tr><th colspan=\"2\">전원</th><td>DC 12V (동봉 AC어댑터 사용)</td></tr><tr><th colspan=\"2\">크기 (W × H × D)</th><td>약 350 &times; 110 &times; 182 mm</td></tr><tr><th colspan=\"2\">무게</th><td>약 2.1kg</td></tr></tbody></table>",
+   "<table><caption>단자</caption><tbody><tr><th colspan=\"2\">Tally</th><td>D-Sub 9 pin</td></tr><tr><th colspan=\"2\">LAN</th><td>RJ-45 x 1 (10 BASE-T/100 BASE-TX)</td></tr><tr><th colspan=\"2\">Serial</th><td>RJ-45 x 1 (RS-422)</td></tr></tbody></table>",
+   "<table><caption>대상 카메라 (최신 버전 시)</caption><tbody><tr><th>LAN</th><th>XC Protocol</th><td>CR-N700, CR-N500, CR-N400, CR-N350, CR-N300, CR-N100, CR-X300, EOS C500 Mark II, EOS C400, EOS C300 Mark III, EOS C80, EOS C70, EOS C50, XF605</td></tr><tr><th>SERIAL</th><th>NU Protocol</th><td>CR-X500, CR-X300, XF605</td></tr></tbody></table>"
+  ],
+  "info": []
+ },
+ {
+  "slug": "rc-ip300",
+  "name": "RC-IP300",
+  "cat": "controller",
+  "source": "https://kr.canon/product/content/detail/95A54BF4D032A687426ABAA697FAE739?productNm=RC-IP300",
+  "gallery": [
+   "products/rc-ip300/g1.jpg",
+   "products/rc-ip300/g2.jpg",
+   "products/rc-ip300/g3.jpg",
+   "products/rc-ip300/g4.jpg"
+  ],
+  "detail": [
+   "products/rc-ip300/d1.jpg",
+   "products/rc-ip300/d2.jpg"
+  ],
+  "spec": [
+   "<table><caption>일반</caption><tbody><tr><th colspan=\"2\">동작환경</th><td>온도 : 0&deg;C ～ +40&deg;C<br>습도 : 20%RH ～ 90%RH</td></tr><tr><th colspan=\"2\">전원（어댑터)</th><td>DC12V</td></tr><tr><th colspan=\"2\">전원（PoE)</th><td>✔（PoE)</td></tr><tr><th colspan=\"2\">크기 (W x H x D)</th><td>약 255&times;93&times;180mm<br>(돌출부 제외)</td></tr><tr><th colspan=\"2\">패널 사이즈</th><td>3.5 inch(터치패널)</td></tr><tr><th colspan=\"2\">무게</th><td>약 1.3 kg</td></tr></tbody></table>",
+   "<table><caption>단자</caption><tbody><tr><th colspan=\"2\">GPIO 단자</th><td>D-Sub 9pin x1</td></tr><tr><th colspan=\"2\">LAN단자</th><td>1000BASE-T / PoE(RJ-45)</td></tr><tr><th colspan=\"2\">전원 단자</th><td>DC IN 12V</td></tr><tr><th colspan=\"2\">Serial  단자</th><td>RJ45</td></tr><tr><th colspan=\"2\">기타</th><td>USB단자(Type A)</td></tr></tbody></table>",
+   "<table><caption>대상 카메라(최신 버전 시)</caption><tbody><tr><th>LAN</th><th>XC Protocol</th><td>CR-N700, CR-N500, CR-N400, CR-N350, CR-N300, CR-N100, CR-X300, EOS C500 Mark II, EOS C400, EOS C300 Mark III, EOS C80, EOS C70, EOS C50, XF605</td></tr><tr><th>SERIAL</th><th>NU Protocol</th><td>CR-X500, CR-X300, XF605</td></tr></tbody></table>"
+  ],
+  "info": []
+ },
+ {
+  "slug": "rc-ip1000",
+  "name": "RC-IP1000",
+  "cat": "controller",
+  "source": "https://kr.canon/product/content/detail/CE80DEE695ABDA008F78CB8CD68E7330?productNm=RC-IP1000",
+  "gallery": [
+   "products/rc-ip1000/g1.jpg",
+   "products/rc-ip1000/g2.jpg",
+   "products/rc-ip1000/g3.jpg"
+  ],
+  "detail": [
+   "products/rc-ip1000/d1.jpg",
+   "products/rc-ip1000/d2.jpg",
+   "products/rc-ip1000/d3.jpg"
+  ],
+  "spec": [
+   "<table><caption>일반</caption><tbody><tr><th colspan=\"2\">동작 환경</th><td>온도 : 0&deg;C ～ +40&deg;C<br>습도 : 20%RH ～ 90%RH</td></tr><tr><th colspan=\"2\">전원</th><td>DC 12V</td></tr><tr><th colspan=\"2\">소비 전류</th><td>0.6A (PoE+ 구동 시) / 2.5A (DC 구동 시)</td></tr><tr><th colspan=\"2\">크기 (W × H × D)</th><td>약 342 &times; 145 &times; 245 mm</td></tr><tr><th colspan=\"2\">무게</th><td>약 3.7kg</td></tr></tbody></table>",
+   "<table><caption>단자</caption><tbody><tr><th colspan=\"2\">GPIO 1/2 단자</th><td>D-Sub 25 pin</td></tr><tr><th colspan=\"2\">LAN 단자</th><td>1000BASE-T</td></tr><tr><th colspan=\"2\">전원 단자</th><td>DC IN 12V 단자<br>XLR 4핀 커넥터</td></tr><tr><th colspan=\"2\">RS-422 1/2/3/4/5 단자</th><td>RS-422</td></tr></tbody></table>",
+   "<table><caption>대상 카메라 (최신 버전 시)</caption><tbody><tr><th>LAN</th><th>XC Protocol</th><td>CR-N700, CR-N500, CR-N400, CR-N350, CR-N300, CR-N100, CR-X300, EOS C500 Mark II, EOS C400, EOS C300 Mark III, EOS C80, EOS C70, EOS C50, XF605</td></tr><tr><th>SERIAL</th><th>NU Protocol</th><td>CR-X500, CR-X300, XF605</td></tr></tbody></table>"
+  ],
+  "info": []
+ },
+ {
+  "slug": "smc-10",
+  "name": "SMC-10",
+  "cat": "controller",
+  "source": "https://canonptz.co.kr/layout/res/home.php?go=doc.view&doc_subj_num=1&num=7",
+  "gallery": [
+   "products/smc-10/g1.png"
+  ],
+  "detail": [
+   "products/smc-10/d1.png"
+  ],
+  "spec": [],
+  "info": [
+   [
+    "모델명",
+    "SMC-10"
+   ],
+   [
+    "브랜드",
+    "SODA"
+   ],
+   [
+    "특징",
+    "작은사이즈 프로페셔널급 성능"
+   ],
+   [
+    "제조사",
+    "Soda Media"
+   ]
+  ]
+ },
+ {
+  "slug": "smc-100",
+  "name": "SMC-100",
+  "cat": "controller",
+  "source": "https://canonptz.co.kr/layout/res/home.php?go=doc.view&doc_subj_num=1&num=8",
+  "gallery": [
+   "products/smc-100/g1.jpg"
+  ],
+  "detail": [
+   "products/smc-100/d1.jpg",
+   "products/smc-100/d2.jpg",
+   "products/smc-100/d3.jpg"
+  ],
+  "spec": [],
+  "info": [
+   [
+    "모델명",
+    "SMC-100"
+   ],
+   [
+    "브랜드",
+    "SODA"
+   ],
+   [
+    "특징",
+    "다중 프로토콜 지원 프로페셔널급 성능"
+   ],
+   [
+    "제조사",
+    "Soda Media"
+   ]
+  ]
+ }
+]

@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* 25-12.18 */
+/* media hover */
+
+@media (hover: hover) {
+	
+    .card:hover {
+      transform: translateY(-5px);
+    }
+}
+
+/* 25-12.18 */
+/* media hover */

@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-basic), sans-serif;
+    line-height: 1.6;
+    font-size: var(--sfont);
+    
+}
+
+header {
+    background: #055dc2;
+    color: var(--White-color);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: var(--black-color);
+}
+
+nav a {
+    color: var(--White-color);
+    text-decoration: none;
+    padding: 1rem;
+}
+
+nav a:hover {
+    background: var(--black-color);
+}
+
+.container {
+    padding: var(--padding-basic);
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.card {
+    background: var(--White-color);
+    padding: 1rem;
+    border: 1px solid var(--White-color);
+    border-radius: 5px;
+    text-align: center;
+}
+
+footer {
+    background: var(--black-color);
+    color: var(--White-color);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+
+section {
+    min-height: 300px;
+}
+
+
+/* seample */
+
+.login {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: var(--White-color);
+}
+
+
+
+/* mo */
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 0.5rem;
+    }
+    
+    body {
+    padding: 0.5rem;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+    * {
+      font-size: 100%; /* 8px */
+    }
+  }
+  @media all and (max-width: 767px){
+    * {
+      font-size: 100%; /* 6.4px */
+    }
+  }
+
+
+
+
+/* root */
+:root{
+    
+    --font-basic: 'SUIT', sans-serif;
+    --font-basic2: 'SUIT-Regular', sans-serif;
+
+    --main-color: #3498db;
+    --secondary-color: #2ecc71;
+    --White-color: #fafafa;;
+    --Gray-color: #c2c2c2;;
+    --black-color:  #000000;;
+
+    --sfont:120%;
+
+    --max-width: 1440px;
+    --padding-basic:0.75rem;
+}

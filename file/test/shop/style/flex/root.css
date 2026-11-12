@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+:root{
+    --color_w: #fafafa;
+    --color_ww: #ffffff;
+    --color_b: #090909;
+    --color_bb: #000000;
+    --color_a: #3498db;
+    --color_aa: #3498db;
+    --color_g: #ebebeb;
+    --color_gg: #ccc;
+    --color_f: #09244d;
+    --main_width: 1440px;
+    --size_a:calc(0.75rem + 0.25vw);
+    --size_s:calc(1.0rem + 0.25vw);
+    --size_d:calc(1.5rem + 0.25vw);
+    --size_q:calc(0.5rem + 3.25vw);
+    --size_z:calc(0.5rem + 0.25vw);
+}

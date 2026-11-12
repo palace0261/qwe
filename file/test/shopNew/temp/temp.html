@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @charset "utf-8";
+.sect-wrap { margin:0 auto; width:1200px; position:relative;}
+.wrap{overflow:hidden;}
+
+.sub-vis {height:325px; background:url(../images/com.jpg) no-repeat center center; background-size:cover; color:white;padding-top:190px; text-align:left; position:relative; margin-bottom:30px; background-image:none;animation:AnimatedBackground 3s ease-out ; text-align:center;;
+	animation-fill-mode:both;}
+
+.com .sub-vis {background-image:url(../images/company.jpg);}
+.rec .sub-vis {background-image:url(../images/rec.jpg);}
+.bus .sub-vis {background-image:url(../images/business.png);}
+.brd .sub-vis {background-image:url(../images/news.jpg);}
+.pro .sub-vis {background-image:url(../images/product.png);}
+.rnd .sub-vis {background-image:url(../images/rnd.jpg);}
+.news .sub-vis {background-image:url(../images/news.jpg);}
+.tech .sub-vis {background-image:url(../images/technology.png);}
+.cus .sub-vis {background-image:url(../images/cus.jpg);}
+.adv .sub-vis {background-image:url(../images/adv.jpg);}
+.arc .sub-vis {background-image:url(../images/archive.png);}
+.visual nav {display:block; bottom:-80px; }
+.visual nav div {padding: 0 6px; font-size:16px; display:inline;    color: #fff;}
+
+/*visual*/
+.visual{height:325px;position:relative;}
+	#pro_main .visual{background:#c2d8f0;}
+	.coupling .visual{background:url('../images/visual_product1.jpg') 50% 100% no-repeat;}
+	.shr .visual{background:url('../images/visual_coupling_shr.jpg') 50% 100% no-repeat;}
+	.sad .visual{background:url('../images/visual_coupling_sad.jpg') 50% 100% no-repeat;}
+	.sd .visual{background:url('../images/visual_coupling_sd.jpg') 50% 100% no-repeat;}
+	.shd .visual{background:url('../images/visual_coupling_shd.jpg') 50% 100% no-repeat;}
+	.sjc .visual{background:url('../images/visual_coupling_sjc.jpg') 50% 100% no-repeat;}
+	.soh .visual{background:url('../images/visual_coupling_soh.jpg') 50% 100% no-repeat;}
+	.srb .visual{background:url('../images/visual_coupling_srb.jpg') 50% 100% no-repeat;}
+	.srg .visual{background:url('../images/visual_coupling_srg.jpg') 50% 100% no-repeat;}
+	.scj .visual{background:url('../images/visual_coupling_scj.jpg') 50% 100% no-repeat;}
+	.sfc .visual{background:url('../images/visual_coupling_sfc.jpg') 50% 100% no-repeat;}
+	.sk .visual{background:url('../images/visual_coupling_sk.jpg') 50% 100% no-repeat;}
+	.shaft .visual{background:url('../images/visual_shaft.jpg') 50% 100% no-repeat;}
+	.safety .visual{background:url('../images/visual_safety.jpg') 50% 100% no-repeat;}
+	.power .visual{background:url('../images/visual_power.jpg') 50% 100% no-repeat;}
+	.timing .visual{background:url('../images/visual_timing.jpg') 50% 100% no-repeat;}
+	.unit .visual{background:url('../images/visual_unit.jpg') 50% 100% no-repeat;}
+	.brd .visual{background:url('../images/brd.jpg') 50% 100% no-repeat;}
+	.company .visual{background:url('../images/visual_company.jpg') 50% 100% no-repeat;}
+	.technology .visual{background:url('../images/visual_tech.jpg') 50% 100% no-repeat;}
+	.new .visual{background:url('../images/visual_new_product.jpg') 50% 100% no-repeat;}
+	.customer .visual{background:url('../images/visual_customer.jpg') 50% 100% no-repeat;}
+
+.visual .layout_center{overflow:hidden; padding-top:150px; } 
+#pro_main .visual .layout_center{background:#c2d8f0 url('../images/visual_product.jpg') 250px 100% no-repeat;} .visual h2{width:250px; height:250px;padding-top:90px;margin-right:50px;font-size:18px; line-height:1.6em;text-align:center;color:#fff; box-sizing:border-box;background-color:rgba(0,104,173,0.7);} .technology .visual h2, .company .visual h2, #pro_main .visual h2, .new .visual h2, .customer .visual h2{padding-top:105px;} .coupling .visual h2{background-color:rgba(0,104,173,0.7);} .shaft .visual h2{background-color:rgba(0,132,163,0.7);} .safety .visual h2{background-color:rgba(118,104,163,0.7);} .power .visual h2{background-color:rgba(168,139,106,0.7);} .timing .visual h2{background-color:rgba(57, 86, 155 ,0.7);} .unit .visual h2{background-color:rgba(44,101,6,0.7);} .spm .visual h2{background-color:rgba(161,111,96,0.7);}
+
+
+
+.visual h2 strong{font-size:30px;font-weight:600; }
+	.shr .visual h2 strong{font-size:26px;}
+	.power .visual h2 strong{font-size:28px; letter-spacing:-1px;}
+.visual h2 strong span{font-size:18px;}
+.visual p{font-size:17px;line-height:1.6em; }
+	.coupling .visual p{margin-top:85px;color:#47698e;}
+	.shaft .visual p{margin-top:95px;color:#187780;}
+	.safety .visual p{margin-top:95px;color:#615291;}
+	.power .visual p{margin-top:85px;color:#675138;}
+	.timing .visual p{margin-top:85px;color:#47698e;}
+	.unit .visual p{margin-top:48px;color:#fff;}
+	.spm .visual p{margin-top:85px;color:#834e3e;}
+	
+.visual p span{font-size:15px; }
+.visual h3{color:#fff;}
+
+
+/*레이아웃*/
+.contents_all{width:1200px;}
+.contents_wrap{background-color:#fff;padding:60px 0 120px 0;}
+.contents_wrap .lnb{width:250px;}
+.contents_wrap .contents{width:1020px;}
+	#pro_main .contents_wrap .contents{width:1300px;}
+
+
+
+
+.lnb { width:100%;position:absolute; border-bottom: 1px solid #ccc; text-align:center;}
+.lnbs::after {display:block; clear:both; content:'';}
+.lnb-wrap {background:rgba(0,0,0,.3); line-height:70px;color:#fff; transition: 0.3s all ease-out;}
+.lnb-wrap .lnb-home {display:block; background:url(../images/lnb.png) no-repeat center center; height:50px; width:70px; float:left;}
+.lnb-wrap .lnbs {max-width:1200px; margin: 0 auto;}
+.lnb-wrap li {float:left; position:relative; line-height:70px; width:20%; transition: 0.3s all ease-out; color:#777;}
+.lnb-wrap li::after { width:1px; content:''; display:block; background:rgba(255,255,255,0.5); position:absolute; top: 22px; right:0;}
+.lnb-wrap li:last-child::after {display:none;}
+.lnb-wrap li.on {position:relative; background:#0068b7;}
+.lnb-wrap li a {transition:0.3s all; font-size:16px; color:rgba(255,255,255,.8);}
+.lnb-wrap li:hover a {color:#fff;}
+.lnb-wrap li.on a {color:#fff;}
+.lnb-wrap a {display:block; width:100%;}
+.lnb-wrap .third > li {width:33.3%;}
+.sixth li {width: 16.66667% !important;}
+.fifths > li {width: 20%;}
+
+.lnb-com{font-size:17px; width:100%;position:absolute; border-bottom: 1px solid #ccc; text-align:center; margin-top: 27px;}
+
+
+.pager {padding-top:3rem; padding-bottom: 2rem; position:relative;  }
+.pager a {background:url(../images/pager-prev.png) no-repeat left center; position:absolute; left:0; width:100px; height:36.8px;; display:block;top:42%; display:none;}
+.pager .next {background-image:url(../images/pager-next.png); background-position:right center; position:absolute; right:0; left:auto; display:none;}
+.pager h3 {padding-left: 12px;position:relative; display:block;margin-top: 30px; padding-bottom:30px; padding-top: 0; text-align:center;}
+.pager h3 span {font-size:14px; color:#006eb8; font-weight:400;}
+
+
+.lnb { width:100%;position:absolute; border-bottom: 1px solid #ccc; text-align:center;}
+.lnbs::after {display:block; clear:both; content:'';}
+.lnb-wrap {background:rgba(0,0,0,.3); line-height:70px;color:#fff; transition: 0.3s all ease-out;}
+.lnb-wrap .lnb-home {display:block; background:url(../images/lnb.png) no-repeat center center; height:50px; width:70px; float:left;}
+.lnb-wrap .lnbs {max-width:1200px; margin: 0 auto;}
+.lnb-wrap li {float:left; position:relative; line-height:70px; width:20%; transition: 0.3s all ease-out; color:#777;}
+.lnb-wrap li::after { width:1px; content:''; display:block; background:rgba(255,255,255,0.5); position:absolute; top: 22px; right:0;}
+.lnb-wrap li:last-child::after {display:none;}
+.lnb-wrap li.on {position:relative; background:#0068b7;}
+.lnb-wrap li a {transition:0.3s all; font-size:16px; color:rgba(255,255,255,.8);}
+.lnb-wrap li:hover a {color:#fff;}
+.lnb-wrap li.on a {color:#fff;}
+.lnb-wrap a {display:block; width:100%;}
+.lnb-wrap .third > li {width:33.3%;}
+
+
+
+.tabs {padding-bottom: 2rem; text-align:center;}
+.tabs li {display:inline-block; width:15%; margin-right: 5px;}
+.tabs li a {display:block; height:50px; font-size:17px; width:100%; line-height:50px; text-align:center; border:1px solid #ddd; background:#f8f8f8; font-weight:300;}
+.tabs li.on a { color:#fff; background:#e00032;}
+footer {border-top: 1px solid #ddd;}
+
+
+/*레이아웃*/
+.contents_wrap{background-color:#fff;padding:100px 0 200px 0; width: 1200px; margin:0 auto}
+.contents_wrap .lnb{width:250px;}
+.contents_wrap .contents{width: 900px; padding:0;}
+#pro_main .contents_wrap .contents{width:1300px;}
+.arti_1{padding-top:35px;}	
+.arti_1 .wrap1 h6{padding-bottom:15px; font-weight: 600;}	
+/* basic table */
+
+
+/*lnb*/
+.contents_wrap aside{position:relative;}
+.lnb a span{padding-left:5px;font-size:14px;letter-spacing:-0.3px;}
+.lnb .depth1 a{padding-left:10px;}
+.lnb .depth2 a{padding-left:20px;}
+.lnb .depth2{text-align:left;}
+.lnb .depth3 a{padding-left:30px;}
+.lnb .depth3.on > a {font-weight: 600;color: rgba(44,101,6,0.9) !important;  background: #efefef url('../images/lnb_depth3_bullet.jpg') 20px 50% no-repeat;}
+
+.lnb .depth4 a{padding-left:40px;}
+.lnb .depth1>a{ border-radius: 0 100px 0 0; display:block;height:40px; font-size:25px; font-weight:600; line-height:40px;color:#fff !important;   text-align:left;  border-radius:0 100px 0 0; background-color: #fe5e01;}
+	.unit .lnb .depth1>a{color:#333;height:auto; padding-top:10px;padding-bottom:10px;line-height:1.2em;}
+	
+.lnb .depth2>a{display:block; height:35px; font-size:16px; line-height:35px;border-bottom:1px dotted #aaa;}
+	.unit .lnb .depth2>a{ color:#4c4c4c !important;background-color:#f2f2f2;;}/*background-color:rgba(44,101,6,0.9);*/
+	.lnb .depth2.on>a{font-weight:600; background-color:#efefef}
+		.unit .lnb .depth2.on>a{background-color:rgba(44,101,6,0.9);}		
+		
+.lnb .depth3>a{display:block; height:35px; font-size:15px; line-height:35px;border-bottom:1px dotted #aaa;background-color:#efefef;}
+	.unit .lnb .depth3>a{background-color:#f4f4f4;}
+.lnb .depth3.on>a{font-weight:600; color:rgba(44,101,6,0.9) !important;background:#efefef url('../images/lnb_depth3_bullet.jpg') 20px 50% no-repeat;}
+.lnb .depth4>a{display:block; height:35px; font-size:15px; line-height:35px;border-bottom:1px dotted #aaa;background-color:#efefef;}
+	.unit .lnb .depth4>a{background-color:rgba(145,176,125,0);}
+
+.lnb .depth2 ul{display:none;}
+.lnb .depth2.on ul{display:block;}
+
+.lnb .all-product {width:100%;height:35px;margin-top:0px;color:#fff;line-height:35px;background: linear-gradient(135deg, #333 0%,#484848 74%,#333 77%,#555 100%);}
+.lnb .all-product a{display:block; width:100%; height:35px; padding-left: 50px; background:url('../images/icon_p_menu.png') 15px 50% no-repeat;box-sizing:border-box;}
+
+.pro-icon{padding:0; padding-bottom:10px; float: right;}
+.pro-icon img{border:1px solid lightgray;}
+.pro-icon .row .col{width: 33.3%; padding-left:4px;}
+.pro-icon .imgbox > a img {
+    display: block;
+    max-width: 100%;
+}
+.wrap h5{font-weight:600;background: url(../images/p-point.jpg) no-repeat left 30px;padding-left: 20px; margin-top: 70px;}
+.contents .title h3{font-weight:800;font-size: 36px;}
+.contents .title p{font-size:18px;}
+.contents .title h3 > span{font-size:18px; font-weight: 600;}
+.wrap2:nth-of-type(2) .row{margin-top:1%;}
+.wrap2 .col-orange{background:#FE5D02;}
+.wrap2 .col-gray{background:#94979C;}
+.wrap2 .col-orange .imgbox, .wrap2 .col-orange .dsc{float:left;}
+.wrap2 .col-gray .imgbox, .wrap2 .col-gray .dsc{float:left;}
+.wrap2 .col{color:#fff; font-size:17px; line-height:27px; padding: 15px;}
+.wrap2 .col .dsc{ vertical-align: middle; margin: 10px 0 0 10px;}
+.wrap2 .col .dsc1{margin:20px 0 0 10px;}
+.wrap2 .col100{width: 100% !important;} 
+
+.important_function {border:1px solid lightgray;}
+.important_function li{border-bottom: 1px solid lightgray; padding: 20px; padding-left: 50px;}
+.important_function li:nth-child(1){background: url(../images/function_number_01.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(2){background: url(../images/function_number_02.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(3){background: url(../images/function_number_03.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(4){background: url(../images/function_number_4.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(5){background: url(../images/function_number_5.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(6){background: url(../images/function_number_6.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(7){background: url(../images/function_number_7.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(8){background: url(../images/function_number_8.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(9){background: url(../images/function_number_9.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(10){background: url(../images/function_number_10.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(11){background: url(../images/function_number_11.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(12){background: url(../images/function_number_12.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(13){background: url(../images/function_number_13.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(14){background: url(../images/function_number_14.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(15){background: url(../images/function_number_15.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(16){background: url(../images/function_number_16.jpg) no-repeat 16px 16px;}
+.important_function li:nth-child(17){background: url(../images/function_number_17.jpg) no-repeat 16px 16px;}
+
+.lastimg{width:100%; margin-top:100px;}
+.lastimg img{width:100%; margin:0 auto; border:1px solid lightgray;}
+
+/* board table */
+.brd-wrap table th{border: none;}
+.brd-wrap table td{border: none;}
+
+/* basic document */
+.content {padding:0 0 5rem; max-width: 1200px; margin:0 auto;}
+.com .content > h3 {text-align:center; padding-top: 100px; position:relative; margin-bottom: 80px;}
+.com .content > h3::before {background:url(../images/h3-bullet.png) no-repeat center top; transform:translateY(-50%); bottom: 45px; position:absolute; height:14px; width:100%; content:''; display:block;}
+.com .content > h3::after {content:''; width: 30px; height: 2px; background:#e00032; position:absolute; bottom: -20px; left:calc(50% - 15px); display:block;}
+
+h5 {padding:1.2rem; position:relative; margin-top: 3rem;}
+/*h5::before {width: 12px; height: 0.3rem; content:''; display:block; background:#f08700;position:absolute; left:0; top:1.9rem; transform: rotate(45deg);}
+h5::after {width: 12px; height: 0.3rem; content:''; display:block; background:#0076c1;position:absolute; left:0; top:1.3rem; transform: rotate(45deg);}*/
+h5 i {padding-right: 0.5rem;}
+h6 i { padding-right: 0.7rem;}
+p.d {margin-left: 2rem; padding-bottom:0.5rem; position:relative; color:#666; text-align:justify;}
+p.d::before {content:''; display:block; width:3px; height:3px; background:#0076c1; position:absolute; left:-0.7rem; top: 0.7rem;}
+article > h6 {position:relative; margin-left: 1rem; margin-top: 3rem; margin-bottom: 1rem;}
+article > h6::before {content:''; display:block; width: 3px; height: 1.2rem; background:#f08700; position:absolute; left:-0.7rem; top:0.2rem;}
+.dsc ul li {color: #666; position:relative; line-height:1.6rem; margin-left: 1rem;}
+.dsc ul li::before {content:''; display:block; width:3px; height:3px; background:#e00032; position:absolute; left:-0.7rem; top: 0.7rem;}
+table{width:100%;}
+table th{padding: 10px; border: 1px solid #ddd; background-color: #eee; font-weight: 400; color: #333;}
+table td{padding: 10px; border: 1px solid #ddd; color: #666; line-height:1.6em; text-align:center;}
+
+.row > .col.f-right {float:right;}
+
+
+
+
+</style>
+<body>
+    
+    <div class="contents f-right">
+					<div class="f-left title">
+						<p>HDMI Matrix Router</p>
+						<h3>HS-88M-U</h3>
+					</div>	
+					<div class="pro-icon">
+						<div class="row third">
+							<div class="col imgbox">
+								<a href="#">
+									<img src="/kor/images/title_icon_01.jpg" alt="" title=""></a>
+							</div>
+							<div class="col imgbox">
+								<a href="#">
+									<img src="/kor/images/title_icon_02.jpg" alt="" title=""></a>
+							</div>
+							<div class="col imgbox">
+								<a href="#">
+									<img src="/kor/images/title_icon_03.jpg" alt="" title=""></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="case pro-list">
+						<div class="imgbox">
+							<img src="/kor/images/hs-88m-u.jpg" alt="hs-88m-u.jpg"></div>
+					</div>
+					<div class="wrap wrap1 case">
+							<h6>Ux-88은 True HDMI 2.0을 지원하는 매트릭스 스위처 입니다</h6>
+							<p>8x8 사이즈를 지원하며 임의의 입력신호를 특정 출력 혹은 모든 출력을 동시에 스위칭 할 수 있는 장비입니다.8x8 사이즈를 지원하며 임의의 입력신호를 특정 출력 혹은 모든 출력을 동시에 스위칭 할 수 있는 장비입니다.8x8 사이즈를 지원하며 임의의 입력신호를 특정 출력 혹은 모든 출력을 동시에 스위칭 할 수 있는 장비입니다.</p>
+							
+						</div>
+
+						<div class="wrap wrap2 case">
+							<h5>크기 및 무게</h5>
+							<div class="row half">
+								<div class="col col-orange">
+									<div class="imgbox">
+										<img src="/kor/images/prosect2_01.jpg" alt=""></div>
+									<div class="dsc">
+										100mm(3.93in)×56mm(2.20in)× <br>
+										16mm(0.62in) (WxDxH)
+									</div>
+								</div>
+								<div class="col col-gray">
+									<div class="imgbox">
+										<img src="/kor/images/prosect2_02.jpg" alt=""></div>
+									<div class="dsc dsc1">
+										무게: 0.57Kg(1.25lb) 
+									</div>
+								</div>
+							</div>
+							
+						</div>
+
+
+						<div class="wrap wrap3 case">
+							<h5>주요기능</h5>
+
+							<ul class="important_function"><li>이때 서포트 유니트는 절대 분해 되어서는 안된다.</li>
+								<li>볼스크류의 고정단을 베어링 부에 밀어 넣을 경우 오일씰이 접히지 않도록 유의한다.</li>
+								<li>칼라와 로크너트를 조립한뒤, 로크너트에 있는 멈춤 나사를 조인다.</li>
+								<li>볼스크류에 너트 브라켓을 장착한다</li>
+								<li>칼라와 로크너트를 조립한뒤, 로크너트에 있는 멈춤 나사를 조인다.</li>
+								<li>볼스크류에 너트 브라켓을 장착한다</li>
+							</ul></div>
+
+						<div class="wrap wrap4 case">
+							<h5>제품사양</h5>
+
+							<table class="Basic-Table"><colgroup><col class="colg-left-35"><col></colgroup><tbody><tr style="border-top:2px solid #333;"><td class="cell-background-gray cell-border-left-n">
+												<p class="cell-font-weight-bold">구분</p>
+											</td>
+
+											<td class="cell-background-gray cell-border-right-n">
+												<p class="cell-font-weight-bold">사양</p>
+											</td>
+										</tr><tr><td class="cell-style-1 cell-background-fcfcfc">
+												<p class="cell-align-left cell-color-333">비디오 대역폭</p>
+											</td>
+											<td class="cell-style-1 cell-border-right-n">
+												<p>18gbps</p>
+											</td>
+										</tr><tr><td class="cell-style-1 cell-background-fcfcfc">
+												<p class="cell-align-left cell-color-333">비디오 해상도</p>
+											</td>
+											<td class="cell-style-1 cell-border-right-n">
+												<p>up to 3840x2160p@60Hz</p>
+											</td>
+										</tr><tr><td class="cell-style-1 cell-background-fcfcfc">
+												<p class="cell-align-left cell-color-333">입력포트</p>
+											</td>
+											<td class="cell-style-1 cell-border-right-n">
+												<p>HDMI Type A[19-pin female]</p>
+											</td>
+										</tr><tr><td class="cell-style-1 cell-background-fcfcfc">
+												<p class="cell-align-left cell-color-333">출력포트</p>
+											</td>
+											<td class="cell-style-1 cell-border-right-n">
+												<p>HDMI Type A[19-pin female]</p>
+											</td>
+										</tr><tr><td class="cell-style-1 cell-background-fcfcfc">
+												<p class="cell-align-left cell-color-333">전원공급</p>
+											</td>
+											<td class="cell-style-1 cell-border-right-n">
+												<p>DC 12V, 5A</p>
+											</td>
+										</tr></tbody></table></div>
+
+
+						<div class="wrap wrap5 lastimg">
+							<img src="/kor/images/ux-88m-2.jpg" alt=""></div>
+						
+					</div>
+
+</body>
+</html>

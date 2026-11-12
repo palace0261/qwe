@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/fonts/Pretendard-Regular.woff2') format('woff2'),
+         url('/fonts/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Pretendard', 'Roboto', Arial, sans-serif;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+
+.ss-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.ss-exu{
+    position: relative;
+}
+.ss-exu img{
+    position: absolute;
+}

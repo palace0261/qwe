@@ -1,0 +1,12 @@
+{
+  "name": "prd-capture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "wsl/main.html \uACE0\uD574\uC0C1\uB3C4 \uCE90\uCC98 \uB3C4\uAD6C (Puppeteer)",
+  "scripts": {
+    "capture": "node js/capture.js"
+  },
+  "dependencies": {
+    "puppeteer": "^23.0.0"
+  }
+}

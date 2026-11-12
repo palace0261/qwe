@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+:root{
+    --font-a: 'noto-sans-kr', 'Noto Sans KR', 'SUIT-Regular', sans-serif;
+    --p_color_a: #5f20ac;
+    --p_color_b: #ff00f5;
+    --color-a: #3498db;
+    --color-g: #313131;
+    --color-gg: #ccc;
+    --color-w: #f3f3f3;
+    --color-b: #090909;
+    --color-bb: #000;
+    --pcor:#f46224;
+    --max-width: 1440px;
+    --a-width: 1200px;
+    --size-a:0.75rem;
+    --size-cd:calc(1.5rem + 0.25vw);
+    --size-ca:calc(1rem + 0.25vw);
+    --size-cb:calc(0.75rem + 0.25vw);
+    --size-b: calc(4.0rem + 0.25vw);
+}
